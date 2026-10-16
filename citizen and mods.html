@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Citizen &amp; Mods — FiveM Hub</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Cairo:wght@600;900&display=swap">
+<style>
+:root{--bg:#dcdad2;--ink:#111;--card:#efede6;--mut:#58564f;--y:#ffd400;--ln:#111;--fi:#111;--fm:#58564f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0d0d;--ink:#f3f1ea;--card:#171717;--mut:#8d8d86;--ln:#f3f1ea;--fi:#f3f1ea;--fm:#8d8d86}}
+:root[data-theme="dark"]{--bg:#0d0d0d;--ink:#f3f1ea;--card:#171717;--mut:#8d8d86;--ln:#f3f1ea;--fi:#f3f1ea;--fm:#8d8d86}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 "Space Mono",ui-monospace,Menlo,monospace;overflow-x:hidden}
+:lang(ar) body,:lang(ar) input,:lang(ar) select,:lang(ar) textarea,:lang(ar) button{font-family:Cairo,"Space Mono",sans-serif}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+.glow{display:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px 70px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:16px 0;font-size:11px;color:var(--mut);letter-spacing:.1em}
+.lgs{display:flex;gap:4px}
+.lg{font:700 11px inherit;font-family:inherit;border:2px solid var(--ink);background:transparent;color:var(--ink);padding:3px 9px;cursor:pointer;transition:.15s}
+.lg.on,.lg:hover{background:var(--y);color:#111;border-color:#111}
+h1{font:400 clamp(56px,13vw,150px)/.88 Anton,Impact,"Arial Narrow",sans-serif;text-transform:uppercase;margin:24px 0 10px;direction:ltr;text-align:start}
+h1 em{font-style:normal;color:var(--y);-webkit-text-stroke:2px #111;paint-order:stroke fill}
+.sub{max-width:520px;color:var(--mut);margin:14px 0 22px}
+.strip{direction:ltr;background:var(--y);color:#111;overflow:hidden;white-space:nowrap;border-block:3px solid #111;transform:rotate(-1.2deg) scale(1.03);margin:18px 0 26px;padding:0}
+.strip div{display:inline-block;padding:8px 0;animation:mq 22s linear infinite;font-weight:700}
+.strip span{margin:0 18px}.strip i{font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+.road{height:6px;background:repeating-linear-gradient(90deg,var(--y) 0 34px,transparent 34px 64px);margin:6px 0 22px;animation:rd 1.6s linear infinite;background-size:64px 6px}
+@keyframes rd{to{background-position:64px 0}}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:22px}
+.chip{font:700 13px inherit;font-family:inherit;border:2px solid var(--ink);background:transparent;color:var(--ink);padding:6px 12px;cursor:pointer;transition:.15s}
+.chip:hover{transform:translateY(-3px) rotate(-2deg)}
+.chip.on{background:var(--ink);color:var(--bg)}
+.up{margin-inline-start:auto;background:var(--y);color:#111;border:3px solid #111;box-shadow:5px 5px 0 #111;font:700 13px inherit;font-family:inherit;padding:9px 18px;cursor:pointer;transition:.15s}
+.up:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 #111}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:var(--card);color:var(--ink);border:2px solid var(--ink);padding:0 0 14px;display:flex;flex-direction:column;gap:6px;transition:transform .2s,box-shadow .2s;animation:in .5s both}
+.card:nth-child(3n+1){transform:rotate(-1.2deg)}.card:nth-child(3n+2){transform:rotate(.8deg)}.card:nth-child(3n){transform:rotate(-.4deg)}
+.card:hover{transform:rotate(0) translateY(-6px);box-shadow:8px 8px 0 var(--y)}
+@keyframes in{from{opacity:0;margin-top:24px}}
+.card::before,.card::after{display:none}
+.img{height:150px;background:#111 center/cover;display:flex;align-items:center;justify-content:center;color:var(--y);font:400 46px Anton,sans-serif;position:relative;overflow:hidden;filter:none}
+.img .a{position:absolute;inset:0;background:center/cover;clip-path:inset(0 0 0 var(--w,100%))}
+.img .ln{position:absolute;top:0;bottom:0;width:3px;background:var(--y);left:var(--w,100%);display:none}
+.rs:hover .ln{display:block}
+.meta{display:flex;justify-content:space-between;gap:8px;font-size:11px;font-weight:700;color:var(--mut);padding:4px 14px 0}
+.meta b{background:#111;color:var(--y);padding:0 6px}
+h3{font:400 26px/1 Anton,Impact,sans-serif;text-transform:uppercase;margin:0;padding:0 14px}
+.card p{margin:0;padding:0 14px;color:var(--mut);font-size:13px;flex:1;word-break:break-word}
+code{display:block;direction:ltr;background:#111;color:var(--y);padding:6px 8px;font-size:12px;overflow-x:auto;white-space:pre;margin:0 14px}
+.act{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px}
+.act a,.act button{flex:1;min-width:88px;text-align:center;font:700 13px inherit;font-family:inherit;padding:7px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
+.act .x{flex:0 0 36px;background:transparent;color:var(--ink)}
+.msg{grid-column:1/-1;border:2px dashed var(--ink);padding:40px 20px;text-align:center;color:var(--mut)}
+dialog{border:3px solid var(--ink);background:var(--card);color:var(--ink);font:inherit;max-width:440px;width:calc(100% - 28px);padding:20px;box-shadow:10px 10px 0 var(--y)}
+dialog::backdrop{background:#000a}
+dialog h2{font:400 34px/1 Anton,sans-serif;text-transform:uppercase;margin:0 0 10px}
+label{display:block;font-weight:700;font-size:12px;margin:10px 0 3px}
+input,select,textarea{width:100%;font:inherit;padding:8px;border:2px solid var(--ink);background:var(--bg);color:var(--ink)}
+.f{display:flex;gap:8px;margin-top:16px}.f button{flex:1;font:700 13px inherit;font-family:inherit;padding:10px;border:2px solid var(--ink);cursor:pointer;background:transparent;color:var(--ink)}
+.f .go{background:var(--y);color:#111;border-color:#111}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.cx{opacity:.62}.cx .img{filter:grayscale(1)}.stamp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-12deg);border:4px solid #ff3b30;color:#ff3b30;background:#000b;font:400 30px Anton,Impact,sans-serif;text-transform:uppercase;padding:0 14px;letter-spacing:.04em}.rsn{color:#ff3b30!important;font-weight:700}.act button:disabled{opacity:.55;cursor:default}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--y);color:#111;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:10px 16px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:99;max-width:90vw}#toast.on{opacity:1;transform:translate(-50%,0)}
+.tr{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:2px solid var(--ink);padding:8px 0}.tr select{width:auto}#tl{max-height:46vh;overflow:auto;margin:10px 0}#me{cursor:default}
+.aerr{background:#ff3b30;color:#fff;border:2px solid #111;padding:8px 10px;font-weight:700;font-size:12px;margin:8px 0;word-break:break-word}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="wrap">
+  <div class="top">
+    <span data-i="free"></span>
+    <div class="lgs">
+      <span id="me" class="lg on" hidden></span>
+      <button class="lg" id="teamb" hidden data-i="team"></button>
+      <button class="lg" id="authb" type="button">Sign in</button>
+    </div>
+    <div class="lgs" id="lgs"></div>
+  </div>
+  <h1>Citizen<br>&amp; <em>Mods</em></h1>
+  <p class="sub" data-i="sub"></p>
+  <div class="strip"><div id="mq"></div></div>
+  <div class="road"></div>
+  <div class="bar" id="bar"></div>
+  <div class="grid" id="grid"><div class="msg" data-i="ld"></div></div>
+</div>
+<div id="toast"></div>
+
+<!-- ===== SIGN IN / CREATE ACCOUNT ===== -->
+<dialog id="authdlg">
+  <h2 id="authtitle">Sign in</h2>
+  <div id="autherr" class="aerr" hidden></div>
+  <label>Username</label>
+  <input id="authu" dir="ltr" autocomplete="username" maxlength="20">
+  <label>Password</label>
+  <input id="authp" type="password" dir="ltr" autocomplete="current-password">
+  <div class="f">
+    <button id="authmode" type="button">Create account</button>
+    <button class="go" id="authgo" type="button">Sign in</button>
+  </div>
+  <div class="f"><button id="authclose" type="button">Cancel</button></div>
+</dialog>
+
+<dialog id="mdlg"><h2 id="mt"></h2><textarea id="mr" rows="2" maxlength="200"></textarea><div class="f"><button id="mn"></button><button class="go" id="my"></button></div></dialog>
+<dialog id="tdlg"><h2 data-i="mm"></h2><input id="tq" placeholder="🔍"><div id="tl"></div><div class="f"><button id="tc" data-i="ok"></button></div></dialog>
+<dialog id="dlg">
+  <h2 data-i="nd"></h2>
+  <label data-i="ti"></label><input id="t" maxlength="60">
+  <label data-i="ca"></label><select id="c"></select>
+  <label data-i="de"></label><textarea id="d" rows="2" maxlength="300"></textarea>
+  <label data-i="li"></label><input id="l" placeholder="https://" dir="ltr">
+  <div id="cw" hidden><label data-i="cm"></label><textarea id="m" rows="3" maxlength="800" dir="ltr"></textarea></div>
+  <div id="iw"><label id="il" data-i="pv"></label><input id="i" type="file" accept="image/*">
+    <div id="i2w" hidden><label data-i="af"></label><input id="i2" type="file" accept="image/*"></div></div>
+  <div class="f"><button id="cancel" data-i="cn"></button><button class="go" id="post" data-i="po"></button></div>
+</dialog>
+<script>
+const CATS=["Citizen","Mods","Crosshair","F8 Crosshair","ReShade Preset","F8 Command","Roads","Trace","Blood FX","Skins"];
+const T={
+en:{n:"EN",cats:["Citizen","Mods","Crosshair","F8 Crosshair","ReShade Preset","F8 Command","Roads","Trace","Blood FX","Skins"],free:"FiveM / free files",sub:"Crosshairs, ReShade presets, F8 commands, roads, trace, blood FX, skins. Take what you need. Drop your own.",all:"All",up:"+ Upload",nd:"New drop",ti:"Title",ca:"Category",de:"Description",li:"Download link (Drive, Mediafire, GitHub…)",cm:"Command / code",pv:"Preview image",bf:"Before image (preset off)",af:"After image (preset on)",cn:"Cancel",po:"Post",pi:"Posting…",em:"Nothing on this roll yet. Be the first to drop something.",ld:"Developing…",si:"Sign in to browse and upload.",by:"by",adm:"★ Admin",dl:"Download",di:"Save image",cx:"Cancel drop",rs2:"Restore",rn:"Canceled",rq:"Reason for canceling (optional)",rp:"Report",rpd:"Reported",ok:"Confirm",team:"Team",rl:"Role",ro:"Owner",ra:"Admin",rd:"Dropper",rm:"Member",nup:"Only the owner can upload.",yr:"Your role",mm:"Members",cp:"Copy",cd:"Copied",e1:"Add a title.",e2:"Add a download link or a command.",e3:"The link must start with http(s)://",e4:"You don’t have permission to post here.",q:"Delete this drop?",e5:"Could not delete.",
+au:"Username",ap:"Password",su:"Create account",sg:"Sign in",so:"Sign out",hac:"Already have an account? Sign in",hnc:"No account? Create one",e10:"Enter a username.",e11:"Username: 2–20 chars, letters/numbers/._- only.",e12:"Password must be at least 4 characters.",e13:"That username is already taken.",e14:"No account with that username.",e15:"Wrong password.",ownerw:"👑 You are the OWNER — welcome!",welc:"Welcome"},
+ar:{n:"عربي",cats:["سيتيزن","مودات","كروسهير","كروسهير F8","إعداد ReShade","أمر F8","طرق","تتبع","تأثير الدم","سكنات"],free:"FiveM / ملفات مجانية",sub:"كروسهير، إعدادات ReShade، أوامر F8، طرق، تتبع، تأثيرات دم، سكنات. خذ ما تحتاجه وشارك ما عندك.",all:"الكل",up:"+ رفع",nd:"منشور جديد",ti:"العنوان",ca:"التصنيف",de:"الوصف",li:"رابط التحميل (Drive أو Mediafire أو GitHub…)",cm:"الأمر / الكود",pv:"صورة المعاينة",bf:"صورة قبل (بدون الإعداد)",af:"صورة بعد (مع الإعداد)",cn:"إلغاء",po:"نشر",pi:"جارٍ النشر…",em:"لا يوجد شيء هنا بعد. كن أول من يرفع.",ld:"جارٍ التحميل…",si:"سجّل الدخول للتصفح والرفع.",by:"بواسطة",adm:"★ المشرف",dl:"تحميل",di:"حفظ الصورة",cx:"إلغاء المنشور",rs2:"استعادة",rn:"ملغى",rq:"سبب الإلغاء (اختياري)",rp:"إبلاغ",rpd:"تم الإبلاغ",ok:"تأكيد",team:"الفريق",rl:"الدور",ro:"المالك",ra:"مشرف",rd:"ناشر",rm:"عضو",nup:"الرفع للمالك فقط.",yr:"دورك",mm:"الأعضاء",cp:"نسخ",cd:"تم النسخ",e1:"أضف عنواناً.",e2:"أضف رابط تحميل أو أمراً.",e3:"يجب أن يبدأ الرابط بـ http(s)://",e4:"ليس لديك صلاحية النشر هنا.",q:"حذف هذا المنشور؟",e5:"تعذر الحذف.",
+au:"اسم المستخدم",ap:"كلمة المرور",su:"إنشاء حساب",sg:"تسجيل الدخول",so:"تسجيل الخروج",hac:"لديك حساب؟ سجّل الدخول",hnc:"ليس لديك حساب؟ أنشئ واحداً",e10:"أدخل اسم المستخدم.",e11:"اسم المستخدم: 2–20 حرفاً، أحرف/أرقام/._- فقط.",e12:"كلمة المرور 4 أحرف على الأقل.",e13:"اسم المستخدم مستخدم بالفعل.",e14:"لا يوجد حساب بهذا الاسم.",e15:"كلمة المرور خاطئة.",ownerw:"👑 أنت المالك — مرحباً!",welc:"مرحباً"},
+it:{n:"IT",cats:["Citizen","Mod","Mirino","Mirino F8","Preset ReShade","Comando F8","Strade","Scie","Effetti sangue","Skin"],free:"FiveM / file gratuiti",sub:"Mirini, preset ReShade, comandi F8, strade, scie, effetti sangue, skin. Prendi quello che ti serve. Condividi i tuoi.",all:"Tutti",up:"+ Carica",nd:"Nuovo upload",ti:"Titolo",ca:"Categoria",de:"Descrizione",li:"Link di download (Drive, Mediafire, GitHub…)",cm:"Comando / codice",pv:"Immagine di anteprima",bf:"Immagine prima (preset spento)",af:"Immagine dopo (preset attivo)",cn:"Annulla",po:"Pubblica",pi:"Pubblicazione…",em:"Ancora niente qui. Sii il primo a caricare qualcosa.",ld:"Sviluppo…",si:"Accedi per sfogliare e caricare.",by:"di",adm:"★ Admin",dl:"Scarica",di:"Salva immagine",cx:"Revoca",rs2:"Ripristina",rn:"Annullato",rq:"Motivo dell’annullamento (facoltativo)",rp:"Segnala",rpd:"Segnalato",ok:"Conferma",team:"Team",rl:"Ruolo",ro:"Proprietario",ra:"Admin",rd:"Dropper",rm:"Membro",nup:"Solo il proprietario può caricare.",yr:"Il tuo ruolo",mm:"Membri",cp:"Copia",cd:"Copiato",e1:"Aggiungi un titolo.",e2:"Aggiungi un link di download o un comando.",e3:"Il link deve iniziare con http(s)://",e4:"Non hai il permesso di pubblicare qui.",q:"Eliminare questo upload?",e5:"Impossibile eliminare.",
+au:"Nome utente",ap:"Password",su:"Crea account",sg:"Accedi",so:"Esci",hac:"Già registrato? Accedi",hnc:"Nessun account? Creane uno",e10:"Inserisci un nome utente.",e11:"Nome utente: 2–20 caratteri, lettere/numeri/._- solo.",e12:"La password deve avere almeno 4 caratteri.",e13:"Nome utente già in uso.",e14:"Nessun account con quel nome.",e15:"Password errata.",ownerw:"👑 Sei il PROPRIETARIO — benvenuto!",welc:"Benvenuto"},
+fr:{n:"FR",cats:["Citizen","Mods","Viseur","Viseur F8","Preset ReShade","Commande F8","Routes","Traces","Effets de sang","Skins"],free:"FiveM / fichiers gratuits",sub:"Viseurs, presets ReShade, commandes F8, routes, traces, effets de sang, skins. Prends ce qu’il te faut. Partage les tiens.",all:"Tout",up:"+ Envoyer",nd:"Nouveau partage",ti:"Titre",ca:"Catégorie",de:"Description",li:"Lien de téléchargement (Drive, Mediafire, GitHub…)",cm:"Commande / code",pv:"Image d’aperçu",bf:"Image avant (preset désactivé)",af:"Image après (preset activé)",cn:"Annuler",po:"Publier",pi:"Publication…",em:"Rien ici pour l’instant. Sois le premier à partager.",ld:"Développement…",si:"Connecte-toi pour parcourir et envoyer.",by:"par",adm:"★ Admin",dl:"Télécharger",di:"Enregistrer l’image",cx:"Retirer",rs2:"Rétablir",rn:"Annulé",rq:"Motif de l’annulation (facultatif)",rp:"Signaler",rpd:"Signalé",ok:"Confirmer",team:"Équipe",rl:"Rôle",ro:"Propriétaire",ra:"Admin",rd:"Dropper",rm:"Membre",nup:"Seul le propriétaire peut envoyer.",yr:"Ton rôle",mm:"Membres",cp:"Copier",cd:"Copié",e1:"Ajoute un titre.",e2:"Ajoute un lien de téléchargement ou une commande.",e3:"Le lien doit commencer par http(s)://",e4:"Tu n’as pas la permission de publier ici.",q:"Supprimer ce partage ?",e5:"Suppression impossible.",
+au:"Nom d’utilisateur",ap:"Mot de passe",su:"Créer un compte",sg:"Se connecter",so:"Se déconnecter",hac:"Déjà inscrit ? Connecte-toi",hnc:"Pas de compte ? Crée-en un",e10:"Entre un nom d’utilisateur.",e11:"Nom d’utilisateur : 2–20 caractères, lettres/chiffres/._- uniquement.",e12:"Le mot de passe doit faire au moins 4 caractères.",e13:"Ce nom d’utilisateur est déjà pris.",e14:"Aucun compte avec ce nom.",e15:"Mot de passe incorrect.",ownerw:"👑 Tu es le PROPRIÉTAIRE — bienvenue !",welc:"Bienvenue"},
+pt:{n:"PT",cats:["Citizen","Mods","Mira","Mira F8","Preset ReShade","Comando F8","Estradas","Rastros","Efeito de sangue","Skins"],free:"FiveM / arquivos grátis",sub:"Miras, presets ReShade, comandos F8, estradas, rastros, efeitos de sangue, skins. Pegue o que precisar. Compartilhe os seus.",all:"Tudo",up:"+ Enviar",nd:"Novo envio",ti:"Título",ca:"Categoria",de:"Descrição",li:"Link de download (Drive, Mediafire, GitHub…)",cm:"Comando / código",pv:"Imagem de prévia",bf:"Imagem antes (preset desligado)",af:"Imagem depois (preset ligado)",cn:"Cancelar",po:"Publicar",pi:"Publicando…",em:"Nada aqui ainda. Seja o primeiro a enviar.",ld:"Revelando…",si:"Entre no site para navegar e enviar.",by:"por",adm:"★ Admin",dl:"Baixar",di:"Salvar imagem",cx:"Cancelar envio",rs2:"Restaurar",rn:"Cancelado",rq:"Motivo do cancelamento (opcional)",rp:"Denunciar",rpd:"Denunciado",ok:"Confirmar",team:"Equipe",rl:"Cargo",ro:"Dono",ra:"Admin",rd:"Dropper",rm:"Membro",nup:"Só o dono pode enviar.",yr:"Seu cargo",mm:"Membros",cp:"Copiar",cd:"Copiado",e1:"Adicione um título.",e2:"Adicione um link de download ou um comando.",e3:"O link deve começar com http(s)://",e4:"Você não tem permissão para publicar aqui.",q:"Excluir este envio?",e5:"Não foi possível excluir.",
+au:"Nome de usuário",ap:"Senha",su:"Criar conta",sg:"Entrar",so:"Sair",hac:"Já tem conta? Entre",hnc:"Não tem conta? Crie uma",e10:"Digite um nome de usuário.",e11:"Nome de usuário: 2–20 caracteres, letras/números/._- apenas.",e12:"A senha deve ter pelo menos 4 caracteres.",e13:"Nome de usuário já está em uso.",e14:"Nenhuma conta com esse nome.",e15:"Senha errada.",ownerw:"👑 Você é o DONO — bem-vindo!",welc:"Bem-vindo"}
+};
+const ICON={"Citizen":"◈","Mods":"⚙","Crosshair":"⌖","F8 Crosshair":"⌖","ReShade Preset":"◐","F8 Command":">_","Roads":"═","Trace":"≋","Blood FX":"✺","Skins":"☻"};
+
+/* ===== LOCAL STORE (users + posts + session) ===== */
+const ST={users:"fv_users",posts:"fv_posts",session:"fv_session"};
+const store={
+  read(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+  write(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+function hash(s){let h=5381;for(let i=0;i<s.length;i++)h=((h<<5)+h)^s.charCodeAt(i);return "h"+(h>>>0).toString(36)}
+
+/* ===== STATE ===== */
+let users   = store.read(ST.users, {});
+let posts   = store.read(ST.posts, []);
+let session = store.read(ST.session, null);
+let names   = {};
+let myRole  = "member";
+let me      = null;
+let L       = "en";
+let filter  = "All";
+let authMode= "in";
+try{const s=localStorage.getItem("lg");if(s&&T[s])L=s;else{const n=(navigator.language||"en").slice(0,2);if(T[n])L=n}}catch(e){}
+const $=id=>document.getElementById(id);
+const t=k=>T[L][k]||T.en[k];
+const cn=c=>T[L].cats[CATS.indexOf(c)]||c;
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safe=u=>/^https?:\/\//i.test(u||"")?esc(u):"";
+function toast(m){const e=$("toast");e.textContent=m;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("on"),3200)}
+function ask(title,inp){return new Promise(res=>{const d=$("mdlg");$("mt").textContent=title;$("mr").hidden=!inp;$("mr").value="";$("mn").textContent=t("cn");$("my").textContent=t("ok");
+  $("mn").onclick=()=>{d.close();res(null)};$("my").onclick=()=>{d.close();res(inp?$("mr").value:true)};d.oncancel=()=>res(null);d.showModal()})}
+
+const isStaff=()=>myRole==="owner"||myRole==="admin";
+const canDrop=()=>myRole==="owner"||myRole==="admin";
+const rn=r=>t({owner:"ro",admin:"ra",dropper:"rd",member:"rm"}[r]||"rm");
+
+/* ============================================================
+   SIGN IN  — the only new part
+   ============================================================ */
+function syncAuthDlg(){
+  const up = authMode==="up";
+  $("authtitle").textContent = up ? t("su") : t("sg");
+  $("authgo").textContent    = up ? t("su") : t("sg");
+  $("authmode").textContent  = up ? t("hac") : t("hnc");
+  $("autherr").hidden = true;
+}
+function openAuth(mode){
+  authMode = mode||"in";
+  $("authu").value=""; $("authp").value="";
+  syncAuthDlg();
+  $("authdlg").showModal();
+  setTimeout(()=>$("authu").focus(),60);
+}
+function showAuthErr(m){const e=$("autherr");e.textContent=m;e.hidden=false}
+$("authmode").onclick=()=>{authMode=authMode==="up"?"in":"up";syncAuthDlg()};
+$("authclose").onclick=()=>$("authdlg").close();
+$("authgo").onclick=()=>{
+  const user=$("authu").value.trim().toLowerCase();
+  const pass=$("authp").value;
+  if(!user)return showAuthErr(t("e10"));
+  if(!/^[a-z0-9_.-]{2,20}$/.test(user))return showAuthErr(t("e11"));
+  if(pass.length<4)return showAuthErr(t("e12"));
+  if(authMode==="up"){
+    if(users[user])return showAuthErr(t("e13"));
+    const isFirst=Object.keys(users).length===0;
+    users[user]={pass:hash(pass),role:isFirst?"owner":"member"};
+    store.write(ST.users,users);
+    session=user;store.write(ST.session,user);
+    $("authdlg").close();
+    toast(isFirst?t("ownerw"):t("welc")+", "+user);
+  }else{
+    const u=users[user];
+    if(!u)return showAuthErr(t("e14"));
+    if(u.pass!==hash(pass))return showAuthErr(t("e15"));
+    session=user;store.write(ST.session,user);
+    $("authdlg").close();
+    toast(t("welc")+", "+user);
+  }
+  bootUser();
+};
+function signOut(){
+  session=null;store.write(ST.session,null);
+  me=null;myRole="member";
+  updateTop();render();
+  toast(t("so"));
+}
+function bootUser(){
+  if(!session||!users[session]){me=null;myRole="member";updateTop();render();return}
+  const u=users[session];
+  me={id:session,name:session,isOwner:u.role==="owner"};
+  myRole=me.isOwner?"owner":(u.role||"member");
+  names={};for(const k in users)names[k]=k;
+  updateTop();render();
+}
+
+/* ============================================================
+   TEAM panel
+   ============================================================ */
+function renderTeam(){
+  const q=($("tq").value||"").toLowerCase();
+  const ids=Object.keys(users).filter(u=>u.toLowerCase().includes(q));
+  const rows=ids.map(u=>{
+    const r=users[u].role,lock=r==="owner"||(r==="admin"&&myRole!=="owner");
+    let opts=["member"];
+    if(myRole==="owner")opts=["member","dropper","admin","owner"];
+    else if(myRole==="admin")opts=["member","admin"];
+    if(!opts.includes(r))opts.push(r);
+    return `<div class="tr"><span>${esc(u)}</span><select data-u="${esc(u)}" ${lock?"disabled":""}>${opts.map(o=>`<option value="${o}" ${o===r?"selected":""}>${rn(o)}</option>`).join("")}</select></div>`;
+  }).join("");
+  $("tl").innerHTML=rows||`<div class="msg">—</div>`;
+  $("tl").querySelectorAll("select").forEach(sel=>sel.onchange=()=>{
+    users[sel.dataset.u].role=sel.value;
+    store.write(ST.users,users);
+    if(sel.dataset.u===session)bootUser();else render();
+  });
+}
+
+/* ============================================================
+   LANG
+   ============================================================ */
+function setLang(l){
+  L=l;try{localStorage.setItem("lg",l)}catch(e){}
+  document.documentElement.lang=l;
+  document.documentElement.dir=l==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t(e.dataset.i));
+  const v=$("c").value;
+  $("c").innerHTML=CATS.map(c=>`<option value="${c}">${esc(cn(c))}</option>`).join("");
+  $("c").value=v||CATS[0];
+  $("mq").innerHTML=("<span>"+T[L].cats.join("</span><i>★</i><span>")+"</span><i>★</i>").repeat(4);
+  $("lgs").innerHTML=Object.keys(T).map(k=>`<button class="lg ${k===L?"on":""}" data-l="${k}">${T[k].n}</button>`).join("");
+  $("lgs").querySelectorAll(".lg").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+  syncForm();updateTop();render();
+  if($("authdlg").open)syncAuthDlg();
+  if($("tdlg").open)renderTeam();
+}
+function syncForm(){const v=$("c").value;$("cw").hidden=v!=="F8 Command";$("i2w").hidden=v!=="ReShade Preset";$("il").textContent=v==="ReShade Preset"?t("bf"):t("pv")}
+$("c").onchange=syncForm;
+
+/* ============================================================
+   BAR + GRID
+   ============================================================ */
+function updateTop(){
+  const ok=!!me;
+  $("me").hidden=!ok;
+  if(ok)$("me").textContent=t("yr")+": "+rn(myRole);
+  $("teamb").hidden=!isStaff();
+  $("authb").textContent=ok?t("so"):t("sg");
+  $("authb").onclick=ok?signOut:()=>openAuth("in");
+  bar();
+}
+function bar(){
+  $("bar").innerHTML=["All",...CATS].map(c=>`<button class="chip ${c===filter?"on":""}" data-c="${c}">${c==="All"?t("all"):esc(cn(c))}</button>`).join("")+(canDrop()?`<button class="up" id="upb">${t("up")}</button>`:"");
+  $("bar").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{filter=b.dataset.c;bar();render()});
+  if($("upb"))$("upb").onclick=()=>{if(!me){toast(t("si"));openAuth("in");return}if(!canDrop()){toast(t("nup"));return}$("dlg").showModal()};
+}
+function render(){
+  const mod=p=>me&&((me.id===p.by&&canDrop())||isStaff());
+  const list=posts.filter(p=>(filter==="All"||p.cat===filter)&&(!p.canceled||mod(p)));
+  if(!list.length){$("grid").innerHTML=`<div class="msg">${t("em")}</div>`;return}
+  $("grid").innerHTML=list.map((p,i)=>`
+  <div class="card ${p.img2?"rs":""} ${p.canceled?"cx":""}">
+    <div class="img" ${p.img?`style="background-image:url('${esc(p.img)}')"`:""}>${p.img?"":ICON[p.cat]||"◈"}${p.img2?`<div class="a" style="background-image:url('${esc(p.img2)}')"></div><div class="ln"></div>`:""}${p.canceled?`<div class="stamp">${t("rn")}</div>`:""}</div>
+    <div class="meta"><span>${String(i+1).padStart(2,"0")}A · ${esc(cn(p.cat))}</span><span>${p.admin?`<b>${t("adm")}</b>`:t("by")+" "+esc(names[p.by]||p.by||"…")}</span></div>
+    <h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>${p.canceled&&p.reason?`<p class="rsn">${esc(p.reason)}</p>`:""}
+    ${p.cmd?`<code>${esc(p.cmd)}</code>`:""}
+    <div class="act">
+      ${p.link&&safe(p.link)?`<button data-dl="${p.id}">${t("dl")}</button>`:""}
+      ${p.cmd?`<button data-cp="${p.id}">${t("cp")}</button>`:""}
+      ${p.img?`<button data-im="img" data-id="${p.id}">${t("di")}${p.img2?" 1":""}</button>`:""}
+      ${p.img2?`<button data-im="img2" data-id="${p.id}">${t("di")} 2</button>`:""}
+      ${mod(p)?`<button data-cx="${p.id}">${p.canceled?t("rs2"):t("cx")}</button>`:""}
+      ${me&&me.id!==p.by&&!p.canceled?`<button data-rp="${p.id}" ${(p.reports||[]).includes(me.id)?"disabled":""}>⚑ ${(p.reports||[]).includes(me.id)?t("rpd"):t("rp")}</button>`:""}
+      ${isStaff()&&(p.reports||[]).length?`<button class="x" disabled>⚑ ${(p.reports||[]).length}</button>`:""}
+      ${mod(p)?`<button class="x" data-del="${p.id}">✕</button>`:""}
+    </div>
+  </div>`).join("");
+
+  document.querySelectorAll("[data-cp]").forEach(b=>b.onclick=async()=>{const p=posts.find(x=>x.id===b.dataset.cp);try{await navigator.clipboard.writeText(p.cmd);b.textContent=t("cd")}catch(e){}});
+  document.querySelectorAll("[data-dl]").forEach(b=>b.onclick=()=>{const p=posts.find(x=>x.id===b.dataset.dl);if(!p||!p.link)return;const a=document.createElement("a");a.href=p.link;a.target="_blank";a.rel="noopener noreferrer";a.style.position="fixed";a.style.left="-9999px";document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),500);setTimeout(()=>{try{window.open(p.link,"_blank","noopener")}catch(e){}},250)});
+  document.querySelectorAll("[data-im]").forEach(b=>b.onclick=()=>{
+    const p=posts.find(x=>x.id===b.dataset.id),k=b.dataset.im,u=p&&p[k];if(!u)return;
+    const nm=((p.title||"image").replace(/[^\w\- ]+/g,"").trim().slice(0,60)||"image")+(k==="img2"?"-after":"")+".jpg";
+    try{const a=document.createElement("a");a.href=u;a.download=nm;a.style.position="fixed";a.style.left="-9999px";document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),500);return}catch(e){}
+    try{const arr=u.split(","),mime=(arr[0].match(/:(.*?);/)||[,"image/jpeg"])[1],bin=atob(arr[1]);let n=bin.length;const u8=new Uint8Array(n);while(n--)u8[n]=bin.charCodeAt(n);const bl=new Blob([u8],{type:mime});const url=URL.createObjectURL(bl);const a=document.createElement("a");a.href=url;a.download=nm;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);return}catch(e){}
+    try{window.open(u,"_blank")}catch(e){}
+  });
+  document.querySelectorAll("[data-cx]").forEach(b=>b.onclick=async()=>{const p=posts.find(x=>x.id===b.dataset.cx);if(p.canceled)p.canceled=false,p.reason="";else{const r=await ask(t("rq"),true);if(r===null)return;p.canceled=true;p.reason=r.trim().slice(0,200)}store.write(ST.posts,posts);render()});
+  document.querySelectorAll("[data-rp]").forEach(b=>b.onclick=()=>{const p=posts.find(x=>x.id===b.dataset.rp);p.reports=[...new Set([...(p.reports||[]),me.id])];store.write(ST.posts,posts);render()});
+  document.querySelectorAll("[data-del]").forEach(b=>b.onclick=async()=>{if(await ask(t("q"),false)){posts=posts.filter(x=>x.id!==b.dataset.del);store.write(ST.posts,posts);render()}});
+}
+addEventListener("pointermove",e=>{const im=e.target.closest&&e.target.closest(".rs .img");if(im){const b=im.getBoundingClientRect();im.style.setProperty("--w",Math.min(100,Math.max(0,(e.clientX-b.left)/b.width*100))+"%")}});
+
+/* ============================================================
+   UPLOAD
+   ============================================================ */
+function fileToDataURL(file,max=900,q=.72){
+  return new Promise((res,rej)=>{const fr=new FileReader();fr.onerror=rej;
+    fr.onload=()=>{const im=new Image();im.onerror=rej;
+      im.onload=()=>{let w=im.width,h=im.height;const sc=Math.min(1,max/Math.max(w,h));w=Math.round(w*sc);h=Math.round(h*sc);
+        const cv=document.createElement("canvas");cv.width=w;cv.height=h;cv.getContext("2d").drawImage(im,0,0,w,h);res(cv.toDataURL("image/jpeg",q))};
+      im.src=fr.result};
+    fr.readAsDataURL(file)});
+}
+$("cancel").onclick=()=>$("dlg").close();
+$("post").onclick=async()=>{
+  if(!me){toast(t("si"));openAuth("in");return}
+  if(!canDrop()){toast(t("nup"));return}
+  const title=$("t").value.trim(),link=$("l").value.trim(),cmd=$("m").value.trim(),cat=$("c").value;
+  if(!title){toast(t("e1"));return}
+  if(!link&&!cmd){toast(t("e2"));return}
+  if(link&&!safe(link)){toast(t("e3"));return}
+  const btn=$("post");btn.disabled=true;btn.textContent=t("pi");
+  let img=null,img2=null;
+  try{const f=$("i").files[0];if(f)img=await fileToDataURL(f)}catch(e){}
+  try{const f2=$("i2").files[0];if(f2&&cat==="ReShade Preset")img2=await fileToDataURL(f2)}catch(e){}
+  posts.unshift({id:"p"+Date.now(),title,cat,desc:$("d").value.trim(),link,cmd:cat==="F8 Command"?cmd:"",img,img2,by:me.id,canceled:false,reports:[],admin:!!me.isOwner,ts:Date.now()});
+  store.write(ST.posts,posts);
+  ["t","d","l","m","i","i2"].forEach(k=>$(k).value="");
+  $("dlg").close();
+  btn.disabled=false;btn.textContent=t("po");
+  render();
+};
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+$("teamb").onclick=()=>{$("tdlg").showModal();renderTeam()};
+$("tq").oninput=renderTeam;
+$("tc").onclick=()=>$("tdlg").close();
+
+setLang(L);
+bootUser();
+</script>
+</body>
+</html>
