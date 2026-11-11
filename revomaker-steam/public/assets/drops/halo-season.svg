@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="FIELD GUIDE key art">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06120C"/>
+      <stop offset="0.55" stop-color="#08080E"/>
+      <stop offset="1" stop-color="#050509"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#4ADE80" stop-opacity="0.6"/>
+      <stop offset="0.55" stop-color="#4ADE80" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#4ADE80" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="core" cx="42%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#4ADE80" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#38BDF8" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#06060B" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4ADE80" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="0.62" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.86"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4ADE80" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#4ADE80" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#FFFFFF" opacity="0.028"/>
+    </pattern>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.055"/></feComponentTransfer>
+    </filter>
+    <clipPath id="frame"><rect width="1200" height="750"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="750" fill="url(#bg)"/>
+    <ellipse cx="792" cy="225" rx="456" ry="375" fill="url(#glowA)" filter="url(#blur)"/>
+    <ellipse cx="192" cy="615" rx="360" ry="300" fill="url(#glowB)" filter="url(#blur)"/>
+
+    <line x1="-1200" y1="790" x2="456" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="-1050" y1="790" x2="468" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="-900" y1="790" x2="480" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="-750" y1="790" x2="492" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="-600" y1="790" x2="504" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="-450" y1="790" x2="516" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="-300" y1="790" x2="528" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="-150" y1="790" x2="540" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="0" y1="790" x2="552" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="150" y1="790" x2="564" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="300" y1="790" x2="576" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="450" y1="790" x2="588" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="600" y1="790" x2="600" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="750" y1="790" x2="612" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="900" y1="790" x2="624" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="1050" y1="790" x2="636" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="1200" y1="790" x2="648" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="1350" y1="790" x2="660" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="1500" y1="790" x2="672" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="1650" y1="790" x2="684" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="1800" y1="790" x2="696" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="1950" y1="790" x2="708" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="2100" y1="790" x2="720" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="2250" y1="790" x2="732" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="2400" y1="790" x2="744" y2="470" stroke="#4ADE80" stroke-opacity="0.16" stroke-width="1"/><line x1="0" y1="480" x2="1200" y2="480" stroke="#4ADE80" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="495" x2="1200" y2="495" stroke="#4ADE80" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="516" x2="1200" y2="516" stroke="#4ADE80" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="546" x2="1200" y2="546" stroke="#4ADE80" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="590" x2="1200" y2="590" stroke="#4ADE80" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="654" x2="1200" y2="654" stroke="#4ADE80" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="747" x2="1200" y2="747" stroke="#4ADE80" stroke-opacity="0.12" stroke-width="1"/>
+    
+    <polygon points="760,0 1010,0 690,750 520,750" fill="url(#streak)" opacity="0.55"/>
+    <polygon points="1040,0 1120,0 900,750 840,750" fill="url(#streak)" opacity="0.35"/>
+    <path d="M0 618 L1200 388" stroke="#4ADE80" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M0 668 L1200 438" stroke="#4ADE80" stroke-opacity="0.08" stroke-width="1"/>
+
+    <g opacity="0.9">
+    <g transform="translate(760 350)">
+      <circle r="196" fill="none" stroke="#4ADE80" stroke-opacity="0.45" stroke-width="2"/>
+      <circle r="152" fill="none" stroke="#38BDF8" stroke-opacity="0.5" stroke-width="1.5"/>
+      <circle r="104" fill="url(#core)" stroke="#4ADE80" stroke-opacity="0.7" stroke-width="1.5"/>
+      <path d="M-96 -56 A 112 112 0 0 1 96 56" fill="none" stroke="#38BDF8" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-70 30 L0 -56 L70 30" fill="none" stroke="#4ADE80" stroke-opacity="0.85" stroke-width="3" stroke-linejoin="round"/>
+      <circle r="236" fill="none" stroke="#4ADE80" stroke-opacity="0.14" stroke-dasharray="2 12"/>
+      <circle cx="196" cy="0" r="4" fill="#4ADE80"/>
+      <circle cx="-196" cy="0" r="4" fill="#38BDF8"/>
+    </g></g>
+    <circle cx="1005" cy="277" r="1.58" fill="#4ADE80" opacity="0.49"/><circle cx="1030" cy="536" r="1.38" fill="#4ADE80" opacity="0.53"/><circle cx="420" cy="356" r="0.87" fill="#4ADE80" opacity="0.34"/><circle cx="61" cy="306" r="0.79" fill="#4ADE80" opacity="0.32"/><circle cx="479" cy="105" r="1.66" fill="#4ADE80" opacity="0.34"/><circle cx="140" cy="318" r="1.84" fill="#4ADE80" opacity="0.61"/><circle cx="295" cy="140" r="0.65" fill="#4ADE80" opacity="0.49"/><circle cx="619" cy="152" r="1.42" fill="#4ADE80" opacity="0.19"/><circle cx="647" cy="115" r="1.25" fill="#4ADE80" opacity="0.21"/><circle cx="676" cy="412" r="2.03" fill="#4ADE80" opacity="0.52"/><circle cx="1004" cy="334" r="1.51" fill="#4ADE80" opacity="0.47"/><circle cx="610" cy="496" r="1.51" fill="#4ADE80" opacity="0.14"/><circle cx="1133" cy="325" r="1.52" fill="#4ADE80" opacity="0.44"/><circle cx="242" cy="427" r="0.73" fill="#4ADE80" opacity="0.16"/><circle cx="1148" cy="304" r="2.10" fill="#4ADE80" opacity="0.46"/><circle cx="696" cy="241" r="2.35" fill="#4ADE80" opacity="0.60"/><circle cx="293" cy="398" r="1.13" fill="#4ADE80" opacity="0.15"/><circle cx="214" cy="119" r="1.83" fill="#4ADE80" opacity="0.36"/><circle cx="642" cy="111" r="1.68" fill="#4ADE80" opacity="0.48"/><circle cx="848" cy="226" r="0.85" fill="#4ADE80" opacity="0.43"/><circle cx="919" cy="204" r="1.39" fill="#4ADE80" opacity="0.53"/><circle cx="962" cy="200" r="2.12" fill="#4ADE80" opacity="0.16"/><circle cx="817" cy="441" r="1.15" fill="#4ADE80" opacity="0.57"/><circle cx="78" cy="314" r="2.25" fill="#4ADE80" opacity="0.53"/><circle cx="152" cy="60" r="1.47" fill="#4ADE80" opacity="0.24"/><circle cx="542" cy="22" r="2.39" fill="#4ADE80" opacity="0.15"/>
+
+    <rect y="412.50000000000006" width="1200" height="337.5" fill="url(#fade)"/>
+
+    <g opacity="1">
+      <rect x="38" y="38" width="1124" height="674" rx="18" fill="none" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <circle cx="58" cy="66" r="4" fill="#4ADE80"/>
+      <text x="74" y="71" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3.2" fill="#FFFFFF" fill-opacity="0.58">REVOMAKER // FIELD GUIDE</text>
+      <text x="1144" y="696" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="2.6" fill="#FFFFFF" fill-opacity="0.34">HAL-06</text>
+      <text x="1218" y="658" text-anchor="end" font-family="'Space Grotesk','Segoe UI',sans-serif" font-size="300" font-weight="700" letter-spacing="-8" fill="none" stroke="#4ADE80" stroke-opacity="0.14" stroke-width="1.2">FG</text>
+      <rect x="56" y="688" width="120" height="2" fill="url(#sweep)"/>
+    </g>
+
+    <rect width="1200" height="750" fill="url(#scan)"/>
+    <rect width="1200" height="750" filter="url(#grain)" opacity="0.6"/>
+  </g>
+</svg>

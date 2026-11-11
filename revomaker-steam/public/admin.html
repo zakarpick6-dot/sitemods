@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Owner console — REVOMAKER STEAM</title>
+  <meta name="description" content="Private owner console for REVOMAKER STEAM." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0B0710" />
+  <link rel="icon" type="image/png" href="/assets/brand/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link rel="stylesheet" href="/css/theme.css" />
+</head>
+<body class="admin-body">
+  <a class="skip-link" href="#adminMain">Skip to console content</a>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="Owner console navigation">
+      <div class="admin-brand-row">
+        <a class="brand" href="/" aria-label="REVOMAKER STEAM storefront">
+          <span class="brand-mark"><img src="/assets/brand/logo-192.png" alt="" width="40" height="40" /></span>
+          <span class="brand-word"><strong>REVOMAKER</strong> <em>STEAM</em></span>
+        </a>
+        <button class="admin-sidebar-close" type="button" id="sidebarClose" aria-label="Close navigation">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-close"></use></svg>
+        </button>
+      </div>
+
+      <div class="admin-console-pill">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Owner console</span>
+        <span class="mono">v1.0</span>
+      </div>
+
+      <nav class="admin-nav" aria-label="Console sections">
+        <button class="admin-nav-link" type="button" data-view="overview">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-grid"></use></svg>
+          <span>Overview</span>
+        </button>
+        <button class="admin-nav-link" type="button" data-view="drops">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-layers"></use></svg>
+          <span>Drops</span>
+          <em class="admin-nav-badge" id="navDropCount">0</em>
+        </button>
+        <button class="admin-nav-link" type="button" data-view="categories">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-tag"></use></svg>
+          <span>Categories</span>
+        </button>
+        <button class="admin-nav-link" type="button" data-view="analytics">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chart"></use></svg>
+          <span>Analytics</span>
+        </button>
+        <button class="admin-nav-link" type="button" data-view="activity">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-activity"></use></svg>
+          <span>Activity</span>
+        </button>
+        <button class="admin-nav-link" type="button" data-view="security">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield"></use></svg>
+          <span>Security</span>
+        </button>
+      </nav>
+
+      <div class="admin-sidebar-foot">
+        <a class="admin-side-link" href="/" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-globe"></use></svg>
+          View storefront
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-up-right"></use></svg>
+        </a>
+        <div class="admin-owner-card">
+          <span class="admin-avatar" id="sidebarAvatar">—</span>
+          <div class="admin-owner-meta">
+            <strong id="sidebarOwner">Loading…</strong>
+            <span id="sidebarEmail">—</span>
+          </div>
+          <button class="btn-icon btn-sm" type="button" id="logoutSidebar" aria-label="Sign out" title="Sign out">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-log-out"></use></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-overlay" id="adminOverlay" hidden></div>
+
+    <div class="admin-main" id="adminMain">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <button class="admin-menu-btn" type="button" id="sidebarOpen" aria-label="Open navigation" aria-expanded="false" aria-controls="adminSidebar">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-menu"></use></svg>
+          </button>
+          <div>
+            <h1 class="admin-page-title" id="pageTitle">Overview</h1>
+            <p class="admin-page-sub" id="pageSubtitle">The vault at a glance.</p>
+          </div>
+        </div>
+        <div class="admin-topbar-actions">
+          <span class="admin-sync" id="syncStatus"><span class="live-dot" aria-hidden="true"></span> Synced</span>
+          <button class="btn btn-outline btn-sm" type="button" id="refreshBtn">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-refresh"></use></svg>
+            Refresh
+          </button>
+          <button class="btn btn-primary btn-sm" type="button" id="newDropBtn">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-plus"></use></svg>
+            New drop
+          </button>
+          <div class="admin-user-chip">
+            <span class="admin-avatar" id="topAvatar">—</span>
+            <div>
+              <strong id="topOwner">—</strong>
+              <span id="topRole">Owner</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="admin-content" id="adminViewRoot">
+        <!-- Overview -->
+        <section class="admin-view" id="view-overview" aria-labelledby="pageTitle">
+          <div class="admin-stats" id="overviewStats"></div>
+
+          <div class="admin-grid admin-grid-2-1">
+            <div class="panel admin-panel">
+              <div class="admin-panel-head">
+                <div>
+                  <h2>Traffic — last 14 days</h2>
+                  <p>Views, claims and visits recorded across the vault.</p>
+                </div>
+                <div class="admin-legend">
+                  <span><i class="dot-view"></i> Views</span>
+                  <span><i class="dot-click"></i> Claims</span>
+                  <span><i class="dot-visit"></i> Visits</span>
+                </div>
+              </div>
+              <div class="admin-chart" id="overviewChart">
+                <div class="sk" style="height:240px;border-radius:12px"></div>
+              </div>
+            </div>
+
+            <div class="panel admin-panel">
+              <div class="admin-panel-head">
+                <div>
+                  <h2>Recent activity</h2>
+                  <p>Latest tracked events.</p>
+                </div>
+                <button class="btn btn-ghost btn-sm" type="button" data-view="activity">View all</button>
+              </div>
+              <div class="admin-event-list" id="overviewActivity"></div>
+            </div>
+          </div>
+
+          <div class="admin-grid admin-grid-2">
+            <div class="panel admin-panel">
+              <div class="admin-panel-head">
+                <div><h2>Top drops</h2><p>Ranked by lifetime views.</p></div>
+                <button class="btn btn-ghost btn-sm" type="button" data-view="drops">Manage</button>
+              </div>
+              <div class="admin-list" id="overviewTopDrops"></div>
+            </div>
+
+            <div class="panel admin-panel">
+              <div class="admin-panel-head">
+                <div><h2>Category mix</h2><p>Published drops per lane.</p></div>
+                <button class="btn btn-ghost btn-sm" type="button" data-view="categories">Edit</button>
+              </div>
+              <div class="admin-cat-bars" id="overviewCategories"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Drops -->
+        <section class="admin-view" id="view-drops" hidden>
+          <div class="admin-toolbar">
+            <div class="admin-search">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+              <input class="input" id="dropsSearch" type="search" placeholder="Search drops by title or slug…" autocomplete="off" aria-label="Search drops" />
+            </div>
+            <select class="select admin-filter" id="dropsStatus" aria-label="Filter by status">
+              <option value="">All statuses</option>
+              <option value="published">Published</option>
+              <option value="draft">Drafts</option>
+            </select>
+            <select class="select admin-filter" id="dropsCategory" aria-label="Filter by category">
+              <option value="">All categories</option>
+            </select>
+            <button class="btn btn-primary btn-sm" type="button" data-new-drop>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-plus"></use></svg>
+              New drop
+            </button>
+          </div>
+
+          <div class="panel admin-panel admin-table-panel">
+            <div class="admin-table-wrap">
+              <table class="admin-table" id="dropsTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Drop</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" class="num">Views</th>
+                    <th scope="col" class="num">Claims</th>
+                    <th scope="col">Updated</th>
+                    <th scope="col" class="actions-col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="dropsTableBody">
+                  <tr><td colspan="7"><div class="sk" style="height:56px"></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="admin-pagination">
+              <span class="admin-muted" id="dropsRange">—</span>
+              <div class="admin-pager">
+                <button class="btn btn-soft btn-sm" type="button" id="dropsPrev">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-left"></use></svg>
+                  Prev
+                </button>
+                <span class="admin-page-indicator" id="dropsPage">1 / 1</span>
+                <button class="btn btn-soft btn-sm" type="button" id="dropsNext">
+                  Next
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="admin-view" id="view-categories" hidden>
+          <div class="admin-section-head">
+            <div>
+              <h2>Drop lanes</h2>
+              <p>Four lanes ship by default. Add more if the vault needs them.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" type="button" id="newCategoryBtn">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-plus"></use></svg>
+              New category
+            </button>
+          </div>
+          <div class="admin-cat-grid" id="categoriesGrid">
+            <div class="sk" style="height:190px;border-radius:18px"></div>
+            <div class="sk" style="height:190px;border-radius:18px"></div>
+          </div>
+        </section>
+
+        <!-- Analytics -->
+        <section class="admin-view" id="view-analytics" hidden>
+          <div class="admin-range-row" role="group" aria-label="Analytics range">
+            <button class="chip" type="button" data-days="7">7 days</button>
+            <button class="chip active" type="button" data-days="30">30 days</button>
+            <button class="chip" type="button" data-days="90">90 days</button>
+            <span class="admin-muted" id="analyticsRangeLabel">Last 30 days</span>
+          </div>
+
+          <div class="admin-stats" id="analyticsStats"></div>
+
+          <div class="panel admin-panel">
+            <div class="admin-panel-head">
+              <div><h2>Traffic series</h2><p id="analyticsChartSub">Daily performance across the selected window.</p></div>
+              <div class="admin-legend">
+                <span><i class="dot-view"></i> Views</span>
+                <span><i class="dot-click"></i> Claims</span>
+                <span><i class="dot-visit"></i> Visits</span>
+              </div>
+            </div>
+            <div class="admin-chart" id="analyticsChart">
+              <div class="sk" style="height:260px;border-radius:12px"></div>
+            </div>
+          </div>
+
+          <div class="admin-grid admin-grid-2">
+            <div class="panel admin-panel">
+              <div class="admin-panel-head"><div><h2>Top drops in range</h2><p>By tracked views.</p></div></div>
+              <div class="admin-list" id="analyticsTop"></div>
+            </div>
+            <div class="panel admin-panel">
+              <div class="admin-panel-head"><div><h2>Traffic sources</h2><p>Referrers and devices.</p></div></div>
+              <div class="admin-breakdowns">
+                <div><h3 class="admin-mini-title">Referrers</h3><div id="referrersList"></div></div>
+                <div><h3 class="admin-mini-title">Devices</h3><div id="devicesList"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-grid admin-grid-2">
+            <div class="panel admin-panel">
+              <div class="admin-panel-head"><div><h2>Weekly buckets</h2><p>Rolling 90-day window.</p></div></div>
+              <div class="admin-bar-chart" id="weeklyChart"></div>
+            </div>
+            <div class="panel admin-panel">
+              <div class="admin-panel-head"><div><h2>Monthly buckets</h2><p>Last 12 months.</p></div></div>
+              <div class="admin-bar-chart" id="monthlyChart"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activity -->
+        <section class="admin-view" id="view-activity" hidden>
+          <div class="admin-grid admin-grid-2">
+            <div class="panel admin-panel">
+              <div class="admin-panel-head">
+                <div><h2>Live event stream</h2><p>The newest tracked visits, views and claims.</p></div>
+                <button class="btn btn-ghost btn-sm" type="button" id="refreshActivity">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-refresh"></use></svg>
+                  Refresh
+                </button>
+              </div>
+              <div class="admin-event-list" id="liveEvents"></div>
+            </div>
+            <div class="panel admin-panel">
+              <div class="admin-panel-head"><div><h2>Owner audit log</h2><p>Every console action, recorded.</p></div></div>
+              <div class="admin-audit-list" id="auditLog"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Security -->
+        <section class="admin-view" id="view-security" hidden>
+          <div class="admin-grid admin-grid-2">
+            <div class="panel admin-panel">
+              <div class="admin-panel-head">
+                <div><h2>Owner accounts</h2><p>Exactly three accounts are allowed — enforced by a database trigger.</p></div>
+                <span class="badge badge-live" id="ownerCountBadge"><span class="live-dot"></span> 3 / 3</span>
+              </div>
+              <div class="admin-owner-list" id="ownerCards"></div>
+              <div class="admin-note">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-info"></use></svg>
+                <span>Owner provisioning is handled by the server CLI. Run <code>npm run owners list</code> to inspect accounts, or <code>npm run owners create -- --email ...</code> while a slot is open.</span>
+              </div>
+            </div>
+
+            <div class="panel admin-panel">
+              <div class="admin-panel-head"><div><h2>Change password</h2><p>Rotating your password signs out every other session.</p></div></div>
+              <form class="admin-form" id="passwordForm" autocomplete="off">
+                <div class="field">
+                  <label class="field-label" for="currentPassword">Current password</label>
+                  <input class="input" id="currentPassword" name="currentPassword" type="password" autocomplete="current-password" required />
+                </div>
+                <div class="field">
+                  <label class="field-label" for="newPassword">New password</label>
+                  <input class="input" id="newPassword" name="newPassword" type="password" autocomplete="new-password" minlength="12" required />
+                  <span class="field-hint">12+ characters, letters and numbers.</span>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="confirmPassword">Confirm new password</label>
+                  <input class="input" id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="12" required />
+                </div>
+                <div class="alert alert-error" id="passwordError" role="alert" hidden></div>
+                <button class="btn btn-primary" type="submit" id="passwordSubmit">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-key"></use></svg>
+                  Update password
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="admin-grid admin-grid-2">
+            <div class="panel admin-panel">
+              <div class="admin-panel-head">
+                <div><h2>Active sessions</h2><p>Signed-in browsers for your account.</p></div>
+                <button class="btn btn-ghost btn-sm" type="button" id="refreshSessions">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-refresh"></use></svg>
+                  Refresh
+                </button>
+              </div>
+              <div class="admin-session-list" id="sessionList"></div>
+            </div>
+
+            <div class="panel admin-panel">
+              <div class="admin-panel-head"><div><h2>Security posture</h2><p>What is protecting this console.</p></div></div>
+              <div class="admin-security-list">
+                <div class="admin-security-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-check-circle"></use></svg><div><strong>Scrypt password hashing</strong><span>N=32768, per-account salt, timing-safe verification.</span></div></div>
+                <div class="admin-security-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-check-circle"></use></svg><div><strong>CSRF protection</strong><span>Every mutation requires the per-session token.</span></div></div>
+                <div class="admin-security-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-check-circle"></use></svg><div><strong>HTTP-only session cookies</strong><span>SameSite=Lax, Secure when served over HTTPS.</span></div></div>
+                <div class="admin-security-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-check-circle"></use></svg><div><strong>Upload validation</strong><span>Magic-byte checks and a 4 MB cap on thumbnails.</span></div></div>
+                <div class="admin-security-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-check-circle"></use></svg><div><strong>Rate limiting</strong><span>Login, tracking and API buckets enforced in memory.</span></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="/js/util.js" defer></script>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/admin.js" defer></script>
+</body>
+</html>

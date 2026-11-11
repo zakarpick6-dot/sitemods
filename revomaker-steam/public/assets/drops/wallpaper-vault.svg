@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="WALLPAPER VAULT key art">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E0616"/>
+      <stop offset="0.55" stop-color="#08080E"/>
+      <stop offset="1" stop-color="#050509"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#A855F7" stop-opacity="0.6"/>
+      <stop offset="0.55" stop-color="#A855F7" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#A855F7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#EC4899" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="core" cx="42%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#A855F7" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#EC4899" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#06060B" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A855F7" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="0.62" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.86"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A855F7" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#A855F7" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#FFFFFF" opacity="0.028"/>
+    </pattern>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.055"/></feComponentTransfer>
+    </filter>
+    <clipPath id="frame"><rect width="1200" height="750"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="750" fill="url(#bg)"/>
+    <ellipse cx="792" cy="225" rx="456" ry="375" fill="url(#glowA)" filter="url(#blur)"/>
+    <ellipse cx="192" cy="615" rx="360" ry="300" fill="url(#glowB)" filter="url(#blur)"/>
+
+    <line x1="-1200" y1="790" x2="456" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="-1050" y1="790" x2="468" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="-900" y1="790" x2="480" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="-750" y1="790" x2="492" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="-600" y1="790" x2="504" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="-450" y1="790" x2="516" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="-300" y1="790" x2="528" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="-150" y1="790" x2="540" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="0" y1="790" x2="552" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="150" y1="790" x2="564" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="300" y1="790" x2="576" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="450" y1="790" x2="588" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="600" y1="790" x2="600" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="750" y1="790" x2="612" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="900" y1="790" x2="624" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="1050" y1="790" x2="636" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="1200" y1="790" x2="648" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="1350" y1="790" x2="660" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="1500" y1="790" x2="672" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="1650" y1="790" x2="684" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="1800" y1="790" x2="696" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="1950" y1="790" x2="708" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="2100" y1="790" x2="720" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="2250" y1="790" x2="732" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="2400" y1="790" x2="744" y2="470" stroke="#A855F7" stroke-opacity="0.16" stroke-width="1"/><line x1="0" y1="480" x2="1200" y2="480" stroke="#A855F7" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="495" x2="1200" y2="495" stroke="#A855F7" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="516" x2="1200" y2="516" stroke="#A855F7" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="546" x2="1200" y2="546" stroke="#A855F7" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="590" x2="1200" y2="590" stroke="#A855F7" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="654" x2="1200" y2="654" stroke="#A855F7" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="747" x2="1200" y2="747" stroke="#A855F7" stroke-opacity="0.12" stroke-width="1"/>
+    
+    <polygon points="760,0 1010,0 690,750 520,750" fill="url(#streak)" opacity="0.55"/>
+    <polygon points="1040,0 1120,0 900,750 840,750" fill="url(#streak)" opacity="0.35"/>
+    <path d="M0 618 L1200 388" stroke="#A855F7" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M0 668 L1200 438" stroke="#A855F7" stroke-opacity="0.08" stroke-width="1"/>
+
+    <g opacity="0.9">
+    <path d="M420 250 C 560 199.70536144450307, 680 300.29463855549693, 820 250 S 1080 214.79375301115215, 1200 250" fill="none" stroke="#A855F7" stroke-opacity="0.12" stroke-width="1.0"/><path d="M420 294 C 560 237.8376052863896, 680 350.1623947136104, 820 294 S 1080 254.6863237004727, 1200 294" fill="none" stroke="#EC4899" stroke-opacity="0.19" stroke-width="1.3"/><path d="M420 338 C 560 258.97294724546373, 680 417.02705275453627, 820 338 S 1080 282.6810630718246, 1200 338" fill="none" stroke="#A855F7" stroke-opacity="0.26" stroke-width="1.5"/><path d="M420 382 C 560 337.3954831697047, 680 426.6045168302953, 820 382 S 1080 350.7768382187933, 1200 382" fill="none" stroke="#EC4899" stroke-opacity="0.33" stroke-width="1.8"/><path d="M420 426 C 560 381.65501761622727, 680 470.34498238377273, 820 426 S 1080 394.9585123313591, 1200 426" fill="none" stroke="#A855F7" stroke-opacity="0.40" stroke-width="2.0"/><path d="M420 470 C 560 392.27150559425354, 680 547.7284944057465, 820 470 S 1080 415.5900539159775, 1200 470" fill="none" stroke="#EC4899" stroke-opacity="0.47" stroke-width="2.3"/><path d="M420 514 C 560 434.319797443226, 680 593.680202556774, 820 514 S 1080 458.2238582102582, 1200 514" fill="none" stroke="#A855F7" stroke-opacity="0.54" stroke-width="2.5"/>
+    <circle cx="820" cy="350" r="5" fill="#A855F7"/>
+    <circle cx="820" cy="350" r="22" fill="none" stroke="#A855F7" stroke-opacity="0.4"/>
+    <circle cx="820" cy="350" r="52" fill="none" stroke="#A855F7" stroke-opacity="0.16"/></g>
+    <circle cx="466" cy="444" r="1.24" fill="#A855F7" opacity="0.22"/><circle cx="725" cy="149" r="1.86" fill="#A855F7" opacity="0.15"/><circle cx="712" cy="264" r="2.22" fill="#A855F7" opacity="0.28"/><circle cx="276" cy="332" r="2.10" fill="#A855F7" opacity="0.35"/><circle cx="675" cy="421" r="0.68" fill="#A855F7" opacity="0.60"/><circle cx="357" cy="77" r="1.18" fill="#A855F7" opacity="0.59"/><circle cx="160" cy="61" r="1.84" fill="#A855F7" opacity="0.41"/><circle cx="870" cy="131" r="1.63" fill="#A855F7" opacity="0.36"/><circle cx="1" cy="443" r="0.94" fill="#A855F7" opacity="0.36"/><circle cx="998" cy="203" r="0.61" fill="#A855F7" opacity="0.36"/><circle cx="391" cy="454" r="2.36" fill="#A855F7" opacity="0.45"/><circle cx="617" cy="373" r="1.93" fill="#A855F7" opacity="0.20"/><circle cx="402" cy="447" r="1.00" fill="#A855F7" opacity="0.30"/><circle cx="1135" cy="391" r="1.45" fill="#A855F7" opacity="0.61"/><circle cx="673" cy="40" r="1.12" fill="#A855F7" opacity="0.33"/><circle cx="604" cy="336" r="0.81" fill="#A855F7" opacity="0.38"/><circle cx="956" cy="1" r="2.38" fill="#A855F7" opacity="0.40"/><circle cx="143" cy="212" r="0.81" fill="#A855F7" opacity="0.14"/><circle cx="354" cy="348" r="1.39" fill="#A855F7" opacity="0.22"/><circle cx="1180" cy="311" r="2.40" fill="#A855F7" opacity="0.33"/><circle cx="325" cy="514" r="1.79" fill="#A855F7" opacity="0.45"/><circle cx="1137" cy="102" r="2.05" fill="#A855F7" opacity="0.32"/><circle cx="641" cy="115" r="1.01" fill="#A855F7" opacity="0.21"/><circle cx="598" cy="460" r="1.83" fill="#A855F7" opacity="0.55"/><circle cx="343" cy="431" r="1.97" fill="#A855F7" opacity="0.13"/><circle cx="1195" cy="452" r="0.84" fill="#A855F7" opacity="0.48"/>
+
+    <rect y="412.50000000000006" width="1200" height="337.5" fill="url(#fade)"/>
+
+    <g opacity="1">
+      <rect x="38" y="38" width="1124" height="674" rx="18" fill="none" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <circle cx="58" cy="66" r="4" fill="#A855F7"/>
+      <text x="74" y="71" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3.2" fill="#FFFFFF" fill-opacity="0.58">REVOMAKER // WALLPAPER VAULT</text>
+      <text x="1144" y="696" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="2.6" fill="#FFFFFF" fill-opacity="0.34">WLP-11</text>
+      <text x="1218" y="658" text-anchor="end" font-family="'Space Grotesk','Segoe UI',sans-serif" font-size="300" font-weight="700" letter-spacing="-8" fill="none" stroke="#A855F7" stroke-opacity="0.14" stroke-width="1.2">WV</text>
+      <rect x="56" y="688" width="120" height="2" fill="url(#sweep)"/>
+    </g>
+
+    <rect width="1200" height="750" fill="url(#scan)"/>
+    <rect width="1200" height="750" filter="url(#grain)" opacity="0.6"/>
+  </g>
+</svg>

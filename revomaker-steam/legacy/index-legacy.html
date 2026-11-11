@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RevoMaker Steam | Premium Gaming Accounts & Digital Library Access</title>
+<meta name="description" content="Instant, secure access to verified premium gaming accounts, libraries and VIP passes." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0b0f17;
+  --bg-elevated:#0d1220;
+  --surface:#111827;
+  --surface-2:#161d2c;
+  --surface-hover:#1c2436;
+  --border:rgba(148,163,184,.14);
+  --border-strong:rgba(148,163,184,.25);
+  --text:#f1f5f9;
+  --text-2:#94a3b8;
+  --text-3:#64748b;
+  --primary:#3b82f6;
+  --primary-2:#60a5fa;
+  --primary-3:#22d3ee;
+  --amber:#fbbf24;
+  --emerald:#34d399;
+  --navbar-h:64px;
+  --radius:18px;
+}
+html[dir="rtl"] body{font-family:"Cairo",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Inter",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100dvh;
+  display:flex;flex-direction:column;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% -8%, rgba(59,130,246,.16), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 10%, rgba(34,211,238,.05), transparent 70%);
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{display:block}
+.container{width:min(1200px,100% - 2.5rem);margin-inline:auto}
+
+/* ============ NAVBAR ============ */
+.navbar{
+  position:sticky;top:0;z-index:50;height:var(--navbar-h);
+  background:rgba(11,15,23,.8);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.navbar .container{display:flex;align-items:center;gap:1.25rem;height:100%}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:.95rem;letter-spacing:-.01em}
+.brand-badge{
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:1.05rem;
+  background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(34,211,238,.15));
+  border:1px solid rgba(59,130,246,.35);
+  box-shadow:0 0 18px rgba(59,130,246,.25);
+}
+.nav-links{display:flex;gap:1.25rem;margin-inline-start:.5rem}
+.nav-links a{font-size:.82rem;color:var(--text-2);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-actions{margin-inline-start:auto;display:flex;align-items:center;gap:.6rem}
+.icon-btn{
+  height:36px;min-width:36px;padding-inline:.75rem;border-radius:12px;
+  border:1px solid var(--border);background:var(--surface);
+  display:inline-flex;align-items:center;justify-content:center;gap:.4rem;
+  font-size:.78rem;color:var(--text-2);transition:.2s;
+}
+.icon-btn:hover{background:var(--surface-hover);color:var(--text)}
+#lang-btn{gap:.45rem;padding-inline:.7rem}
+.lang-menu{
+  position:absolute;top:115%;inset-inline-end:0;min-width:150px;z-index:60;
+  background:var(--surface);border:1px solid var(--border-strong);border-radius:14px;
+  padding:.35rem;box-shadow:0 16px 40px rgba(0,0,0,.5);display:none;
+}
+.lang-menu.open{display:block}
+.lang-menu button{
+  display:flex;align-items:center;gap:.55rem;width:100%;padding:.55rem .7rem;
+  border-radius:10px;font-size:.8rem;color:var(--text-2);
+}
+.lang-menu button:hover{background:var(--surface-hover);color:var(--text)}
+.lang-menu button.current{color:var(--text);background:var(--surface-2)}
+.cta-btn{
+  height:36px;padding-inline:1rem;border-radius:12px;font-size:.8rem;font-weight:700;
+  background:linear-gradient(135deg,var(--primary),#4f46e5);color:#fff;
+  box-shadow:0 4px 16px rgba(59,130,246,.35);transition:.2s;
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.cta-btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+
+/* ============ HERO ============ */
+.hero{padding:4rem 0 2rem;text-align:center}
+.badge{
+  display:inline-flex;align-items:center;gap:.55rem;
+  border:1px solid rgba(59,130,246,.3);background:rgba(59,130,246,.1);
+  border-radius:999px;padding:.5rem 1.1rem;font-size:.72rem;font-weight:700;color:#93c5fd;
+  box-shadow:0 0 14px rgba(59,130,246,.15);margin-bottom:1rem;
+}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--primary-2);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.hero h1{
+  font-size:clamp(2rem,5.5vw,3.6rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;
+}
+.hero h1 .grad{
+  background:linear-gradient(90deg,#60a5fa,#a5b4fc,#22d3ee);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{margin:1rem auto 0;max-width:560px;color:var(--text-2);font-size:.95rem;line-height:1.6}
+.hero-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin-top:1.5rem}
+.chip{
+  display:inline-flex;align-items:center;gap:.45rem;
+  border:1px solid var(--border);background:var(--surface);
+  border-radius:999px;padding:.5rem .95rem;font-size:.74rem;font-weight:500;color:var(--text-2);
+}
+
+/* ============ SECTION / TABS ============ */
+.catalog{padding:2rem 0 4rem}
+.tabs-wrap{display:flex;justify-content:center;margin:1.5rem 0 2rem}
+.tabs{
+  display:inline-flex;gap:.3rem;padding:.35rem;border-radius:18px;
+  background:var(--surface);border:1px solid var(--border);
+  box-shadow:inset 0 2px 8px rgba(0,0,0,.4);
+}
+.tab{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.75rem 1.4rem;border-radius:14px;font-size:.78rem;font-weight:700;
+  color:var(--text-2);transition:.2s;
+}
+.tab:hover{color:var(--amber)}
+.tab.active{color:var(--text);background:linear-gradient(135deg,rgba(59,130,246,.22),rgba(99,102,241,.14));border:1px solid rgba(59,130,246,.3);box-shadow:0 0 16px rgba(59,130,246,.18)}
+
+/* search + filter row */
+.toolbar{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;max-width:72rem;margin:0 auto 2rem}
+.search{position:relative;flex:1 1 300px}
+.search svg{position:absolute;inset-inline-start:.85rem;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--text-3)}
+.search input{
+  width:100%;height:46px;border-radius:14px;
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--text);font-size:.85rem;padding-inline:2.5rem;outline:none;transition:.2s;
+  font-family:inherit;
+}
+html[dir="rtl"] .search input{font-family:"Cairo",sans-serif}
+.search input:focus{border-color:rgba(59,130,246,.55);box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+.search input::placeholder{color:var(--text-3)}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem}
+.filter{
+  padding:.6rem 1.05rem;border-radius:999px;font-size:.76rem;font-weight:700;
+  border:1px solid var(--border);background:var(--surface);color:var(--text-2);transition:.2s;
+}
+.filter:hover{color:var(--text);border-color:var(--border-strong)}
+.filter.active{color:var(--primary-2);border-color:rgba(59,130,246,.5);background:rgba(59,130,246,.12)}
+
+/* ============ GRID / CARDS ============ */
+.grid{
+  display:grid;gap:1.4rem;
+  grid-template-columns:repeat(auto-fill,minmax(255px,1fr));
+  max-width:72rem;margin:0 auto;
+}
+.card{
+  display:flex;flex-direction:column;overflow:hidden;border-radius:var(--radius);
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  border:1px solid var(--border);
+  animation:rise .5s both;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,.4);box-shadow:0 18px 40px rgba(2,6,23,.6),0 0 24px rgba(59,130,246,.1)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+.cover{
+  aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
+}
+.cover .art{
+  position:absolute;inset:0;opacity:.9;
+  background-image:radial-gradient(circle at 25% 20%,rgba(255,255,255,.14),transparent 45%);
+}
+.cover .glyph{font-size:2.6rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));z-index:1}
+.cover .platform-tag{
+  position:absolute;top:.7rem;inset-inline-start:.7rem;z-index:2;
+  display:inline-flex;align-items:center;gap:.35rem;
+  background:rgba(5,8,15,.65);backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;padding:.28rem .65rem;font-size:.64rem;font-weight:700;color:#e2e8f0;
+}
+.cover .type-tag{
+  position:absolute;top:.7rem;inset-inline-end:.72rem;z-index:2;
+  border-radius:999px;padding:.3rem .62rem;font-size:.62rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+}
+.type-tag.std{background:rgba(59,130,246,.2);color:#93c5fd;border:1px solid rgba(59,130,246,.4)}
+.type-tag.vip{background:rgba(251,191,36,.16);color:var(--amber);border:1px solid rgba(251,191,36,.45);box-shadow:0 0 12px rgba(251,191,36,.18)}
+.card-body{display:flex;flex-direction:column;gap:.55rem;padding:1.15rem 1.2rem 1.25rem;flex:1}
+.card-platform{font-size:.66rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text-3)}
+.card-title{font-size:1.02rem;font-weight:800;letter-spacing:-.01em}
+.card-meta{font-size:.76rem;color:var(--text-2);line-height:1.5}
+.card-foot{margin-top:auto;padding-top:.85rem;display:flex;align-items:center;gap:.6rem}
+.price{font-size:1.15rem;font-weight:800;margin-inline-end:auto}
+.price small{display:block;font-size:.62rem;font-weight:600;color:var(--text-3);letter-spacing:.05em;text-transform:uppercase}
+.buy-btn{
+  height:38px;padding-inline:1rem;border-radius:11px;font-size:.76rem;font-weight:700;color:#fff;
+  background:linear-gradient(135deg,var(--primary),#4f46e5);transition:.2s;
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.buy-btn:hover{filter:brightness(1.15)}
+.info-btn{
+  width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  border:1px solid var(--border);background:var(--surface);color:var(--text-2);transition:.2s;
+}
+.info-btn:hover{color:var(--text);background:var(--surface-hover)}
+.soldout{
+  color:var(--text-3);font-weight:700;font-size:.74rem;width:100%;text-align:center;
+  background:var(--surface);border:1px dashed var(--border-strong);border-radius:11px;padding:.6rem;
+}
+.empty{
+  grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--text-2);
+}
+.empty .big{font-size:2.5rem;margin-bottom:.8rem}
+
+/* ============ FEATURES ============ */
+.features{padding:2rem 0 4rem}
+.features h2{text-align:center;font-size:1.6rem;font-weight:800;margin-bottom:2.2rem;letter-spacing:-.02em}
+.features-grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.feature{
+  padding:1.5rem;border-radius:var(--radius);background:var(--surface);
+  border:1px solid var(--border);transition:.25s;
+}
+.feature:hover{border-color:rgba(59,130,246,.35);transform:translateY(-3px)}
+.feature .ic{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem;
+  background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.28);margin-bottom:.9rem;
+}
+.feature h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.feature p{font-size:.8rem;color:var(--text-2);line-height:1.6}
+
+/* ============ FOOTER ============ */
+footer{margin-top:auto;border-top:1px solid var(--border);background:var(--bg-elevated)}
+.footer-grid{display:grid;gap:2.5rem;grid-template-columns:1fr;padding:3.5rem 0 2.5rem}
+@media(min-width:760px){.footer-grid{grid-template-columns:5fr 7fr}.foot-cols{justify-items:start;display:grid;grid-template-columns:repeat(3,1fr)}}
+footer .desc{margin-top:1rem;max-width:260px;font-size:.82rem;color:var(--text-2);line-height:1.65}
+.foot-col h4{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:.9rem}
+.foot-col ul{list-style:none;display:grid;gap:.65rem}
+.foot-col a{font-size:.82rem;color:var(--text-2);transition:.2s}
+.foot-col a:hover{color:var(--text)}
+.footer-bottom{
+  display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;
+  border-top:1px solid var(--border);padding:1.2rem 0 2rem;font-size:.72rem;color:var(--text-3);
+}
+
+/* ============ MODAL ============ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:1rem;
+  background:rgba(2,6,16,.75);backdrop-filter:blur(6px);
+}
+.modal-overlay.open{display:grid}
+.modal{
+  width:min(480px,100%);border-radius:22px;overflow:hidden;
+  background:var(--surface);border:1px solid var(--border-strong);
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+  animation:pop .3s;
+}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(10px)}}
+.modal .cover{aspect-ratio:16/7}
+.modal-body{padding:1.4rem 1.5rem 1.6rem}
+.modal h3{font-size:1.25rem;font-weight:800}
+.modal .plist{display:grid;gap:.55rem;margin:1rem 0 1.2rem}
+.modal .plist li{display:flex;gap:.55rem;align-items:flex-start;font-size:.82rem;color:var(--text-2);list-style:none}
+.modal .plist svg{width:16px;height:16px;color:var(--emerald);flex:none;margin-top:.12rem}
+.modal .price-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid var(--border);padding-top:1.1rem}
+.modal .buy-btn{flex:none}
+.modal-close{
+  position:absolute;top:.8rem;inset-inline-end:.8rem;z-index:3;
+  width:32px;height:32px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(5,8,15,.6);border:1px solid rgba(255,255,255,.15);color:#e2e8f0;font-size:.95rem;
+}
+.modal{position:relative}
+
+/* toast */
+#toast{
+  position:fixed;bottom:1.5rem;inset-inline-end:1.5rem;z-index:200;
+  background:var(--surface);border:1px solid rgba(59,130,246,.45);border-radius:14px;
+  padding:.85rem 1.2rem;font-size:.82rem;color:var(--text);
+  box-shadow:0 12px 40px rgba(0,0,0,.55);opacity:0;pointer-events:none;
+  transform:translateY(10px);transition:.3s;
+}
+#toast.show{opacity:1;transform:none}
+#toast b{color:var(--primary-2)}
+
+@media(max-width:820px){.nav-links{display:none}.cta-btn span{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="container">
+    <a class="brand" href="#">
+      <span class="brand-badge">🎮</span>
+      <span data-i18n="brand">RevoMaker Steam</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#accounts-library" data-i18n="nav_accounts" class="active">Accounts</a>
+      <a href="#features" data-i18n="nav_why">Why us</a>
+      <a href="#" data-i18n="nav_support">Support</a>
+    </nav>
+    <div class="nav-actions">
+      <div style="position:relative">
+        <button class="icon-btn" id="lang-btn" aria-haspopup="listbox">
+          <span id="lang-flag">🇬🇧</span><span id="lang-label">English</span><span>▾</span>
+        </button>
+        <div class="lang-menu" id="lang-menu" role="listbox">
+          <button data-lang="en"><span>🇬🇧</span> English</button>
+          <button data-lang="fr"><span>🇫🇷</span> Français</button>
+          <button data-lang="it"><span>🇮🇹</span> Italiano</button>
+          <button data-lang="ar"><span>🇸🇦</span> العربية</button>
+        </div>
+      </div>
+      <button class="cta-btn" data-i18n="nav_buy">Buy Guide ✓</button>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1">
+  <!-- ================= HERO ================= -->
+  <section class="hero container">
+    <div class="badge">
+      <span>🎮</span><span data-i18n="brand">RevoMaker Steam</span><span class="dot"></span>
+    </div>
+    <h1><span data-i18n="hero_t1">Instant Premium</span> <span class="grad" data-i18n="hero_t2">Gaming Accounts</span></h1>
+    <p data-i18n="hero_p">Get instant, secure access to verified Steam, Xbox, Rockstar and VIP gaming libraries — delivered in seconds.</p>
+    <div class="hero-chips">
+      <span class="chip">🛡️ <span data-i18n="chip_verified">100% Verified Accounts</span></span>
+      <span class="chip">⚡ <span data-i18n="chip_fast">Instant Delivery</span></span>
+      <span class="chip">👑 <span data-i18n="chip_vip">VIP Vault & Passes</span></span>
+      <span class="chip">🔒 <span data-i18n="chip_secure">Secure Payment</span></span>
+    </div>
+  </section>
+
+  <!-- ================= CATALOG ================= -->
+  <section class="catalog container" id="accounts-library">
+    <div class="tabs-wrap">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="standard" role="tab">
+          <span>🗂️</span><span data-i18n="tab_std">Standard Accounts</span>
+        </button>
+        <button class="tab" data-tab="vip" role="tab">
+          <span>👑</span><span data-i18n="tab_vip">VIP Accounts</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        <input type="search" id="search" data-i18n-ph="search_ph" placeholder="Search accounts…" />
+      </label>
+      <div class="filters" id="filters"></div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="features container" id="features">
+    <h2 data-i18n="why_title">Why gamers choose RevoMaker Steam</h2>
+    <div class="features-grid">
+      <div class="feature"><div class="ic">⚡</div><h3 data-i18n="f1t">Instant Delivery</h3><p data-i18n="f1d">Credentials and instructions are delivered automatically right after payment — no waiting, no tickets.</p></div>
+      <div class="feature"><div class="ic">🛡️</div><h3 data-i18n="f2t">Verified & Inspected</h3><p data-i18n="f2d">Every account is manually checked, games verified and access guarded before listing.</p></div>
+      <div class="feature"><div class="ic">💬</div><h3 data-i18n="f3t">24/7 Support</h3><p data-i18n="f3d">A dedicated team is available around the clock in English, French, Italian and Arabic.</p></div>
+      <div class="feature"><div class="ic">♻️</div><h3 data-i18n="f4t">Replacement Warranty</h3><p data-i18n="f4d">If anything goes wrong with access, a replacement or refund is guaranteed by policy.</p></div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#"><span class="brand-badge">🎮</span><span data-i18n="brand">RevoMaker Steam</span></a>
+        <p class="desc" data-i18n="foot_desc">Premium digital gaming account access with security, speed and clarity.</p>
+        <div style="display:flex;gap:.5rem;margin-top:1.2rem">
+          <span class="icon-btn">💬</span><span class="icon-btn">📧</span><span class="icon-btn">🐦</span>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4 data-i18n="foot_product">Product</h4>
+          <ul>
+            <li><a href="#accounts-library" data-i18n="tab_std">Standard Accounts</a></li>
+            <li><a href="#accounts-library" data-i18n="tab_vip">VIP Accounts</a></li>
+            <li><a href="#features" data-i18n="nav_why">Why us</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4 data-i18n="foot_company">Company</h4>
+          <ul>
+            <li><a href="#" data-i18n="nav_support">Support</a></li>
+            <li><a href="#">E-Panel</a></li>
+            <li><a href="#" data-i18n="foot_contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4 data-i18n="foot_legal">Legal</h4>
+          <ul>
+            <li><a href="#" data-i18n="foot_privacy">Privacy</a></li>
+            <li><a href="#" data-i18n="foot_terms">Terms</a></li>
+            <li><a href="#" data-i18n="foot_refund">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="foot_copy">© 2026 RevoMaker Steam. All rights reserved.</span>
+      <span data-i18n="foot_tag">Shared accounts, refined.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODAL ================= -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div class="cover" id="modal-cover"><div class="art" id="modal-art"></div><span class="glyph" id="modal-glyph">🎮</span></div>
+    <div class="modal-body">
+      <h3 id="modal-title"></h3>
+      <p style="font-size:.8rem;color:var(--text-2);margin-top:.35rem" id="modal-meta"></p>
+      <ul class="plist" id="modal-list"></ul>
+      <div class="price-row">
+        <div class="price"><small data-i18n="price_label">One-time price</small><span id="modal-price"></span></div>
+        <button class="buy-btn" id="modal-buy">🛒 <span data-i18n="buy_now">Buy now</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ================= DATA ================= */
+const ACCOUNTS = [
+  // ---- Standard ----
+  {id:1, tab:"standard", platform:"steam", art:"l-g1", glyph:"🎮", title:{en:"Steam Library — Starter",fr:"Bibliothèque Steam — Starter",it:"Libreria Steam — Starter",ar:"مكتبة ستيم — المبتدئ"}, games:24, price:24, sold:false},
+  {id:2, tab:"standard", platform:"steam", art:"l-g2", glyph:"🔫", title:{en:"CS2 Prime Ready",fr:"CS2 Prime Prêt",it:"CS2 Prime Pronto",ar:"CS2 Prime جاهز"}, games:38, price:35, sold:false},
+  {id:3, tab:"standard", platform:"rockstar", art:"l-g3", glyph:"🚗", title:{en:"GTA V + RDR2 Rockstar",fr:"GTA V + RDR2 Rockstar",it:"GTA V + RDR2 Rockstar",ar:"GTA V + RDR2 روكستار"}, games:6, price:49, sold:false},
+  {id:4, tab:"standard", platform:"xbox", art:"l-g4", glyph:"🎯", title:{en:"Xbox Game Pass Ready",fr:"Xbox Game Pass Prêt",it:"Xbox Game Pass Pronto",ar:"Xbox Game Pass جاهز"}, games:60, price:39, sold:true},
+  {id:5, tab:"standard", platform:"steam", art:"l-g5", glyph:"⚔️", title:{en:"Elden Ring + DLC",fr:"Elden Ring + DLC",it:"Elden Ring + DLC",ar:"Elden Ring + التوسعة"}, games:15, price:29, sold:false},
+  {id:6, tab:"standard", platform:"steam", art:"l-g6", glyph:"🔫", title:{en:"Rust + Weekly Drops",fr:"Rust + Weekly Drops",it:"Rust + Weekly Drops",ar:"Rust + أسبوعية"}, games:11, price:32, sold:false},
+  {id:7, tab:"standard", platform:"steam", art:"l-g7", glyph:"🚀", title:{en:"Astroneer + Sandbox Mix",fr:"Astroneer + Mix Sandbox",it:"Astroneer + Mix Sandbox",ar:"Astroneer + أصناف"}, games:19, price:19, sold:false},
+  {id:8, tab:"standard", platform:"rockstar", art:"l-g8", glyph:"🤠", title:{en:"Rockstar Essentials",fr:"Les incontournables Rockstar",it:"Essenziali Rockstar",ar:"أساسيات روكستار"}, games:4, price:27, sold:false},
+  // ---- VIP ----
+  {id:9,  tab:"vip", platform:"vip", art:"l-g9",  glyph:"👑", title:{en:"VIP Vault — Ultimate",fr:"Coffre VIP — Ultime",it:"Caveau VIP — Ultimate",ar:"خزنة VIP — الأقصى"}, games:120, price:89, sold:false},
+  {id:10, tab:"vip", platform:"vip", art:"l-g10", glyph:"💎", title:{en:"VIP Platinum Library",fr:"Bibliothèque VIP Platine",it:"Libreria VIP Platino",ar:"مكتبة VIP بلاتينيوم"}, games:85, price:69, sold:false},
+  {id:11, tab:"vip", platform:"vip", art:"l-g11", glyph:"🏆", title:{en:"eSports VIP Pass",fr:"Pass eSport VIP",it:"Pass eSport VIP",ar:"باقة الرياضات الرقمية"}, games:48, price:59, sold:false},
+  {id:12, tab:"vip", platform:"vip", art:"l-g12", glyph:"🎪", title:{en:"VIP Family Bundle",fr:"Pack Famille VIP",it:"Pacchetto Famiglia VIP",ar:"مجموعة VIP العائلية"}, games:75, price:54, sold:false},
+];
+
+const PLATFORMS = {
+  all:     {label:{en:"All platforms",fr:"Toutes",it:"Tutte",ar:"الكل"}, emoji:"🌐"},
+  steam:   {label:{en:"Steam",fr:"Steam",it:"Steam",ar:"ستيم"}, emoji:"🟦"},
+  xbox:    {label:{en:"Xbox",fr:"Xbox",it:"Xbox",ar:"إكس بوكس"}, emoji:"🟩"},
+  rockstar:{label:{en:"Rockstar",fr:"Rockstar",it:"Rockstar",ar:"روكستار"}, emoji:"🟥"},
+  vip:     {label:{en:"VIP",fr:"VIP",it:"VIP",ar:"VIP"}, emoji:"👑"},
+};
+
+const I18N = {
+  en:{flag:"🇬🇧", brand:"RevoMaker Steam", nav_accounts:"Accounts", nav_why:"Why us", nav_support:"Support", nav_buy:"Buy Guide ✓",
+    hero_t1:"Instant Premium", hero_t2:"Gaming Accounts",
+    hero_p:"Get instant, secure access to verified Steam, Xbox, Rockstar and VIP gaming libraries — delivered in seconds.",
+    chip_verified:"100% Verified Accounts", chip_fast:"Instant Delivery", chip_vip:"VIP Vault & Passes", chip_secure:"Secure Payment",
+    tab_std:"Standard Accounts", tab_vip:"VIP Accounts", search_ph:"Search accounts…",
+    games:"games", price_label:"One-time price", buy_now:"Buy now", details:"Details", sold_out:"Sold out",
+    why_title:"Why gamers choose RevoMaker Steam",
+    f1t:"Instant Delivery", f1d:"Credentials and instructions are delivered automatically right after payment — no waiting, no tickets.",
+    f2t:"Verified & Inspected", f2d:"Every account is manually checked, games verified and access guarded before listing.",
+    f3t:"24/7 Support", f3d:"A dedicated team is available around the clock in English, French, Italian and Arabic.",
+    f4t:"Replacement Warranty", f4d:"If anything goes wrong with access, a replacement or refund is guaranteed by policy.",
+    foot_desc:"Premium digital gaming account access with security, speed and clarity.",
+    foot_product:"Product", foot_company:"Company", foot_legal:"Legal", foot_contact:"Contact",
+    foot_privacy:"Privacy", foot_terms:"Terms", foot_refund:"Refund Policy",
+    foot_copy:"© 2026 RevoMaker Steam. All rights reserved.", foot_tag:"Shared accounts, refined.",
+    m_includes:"What's included:", li_manual:"Full handover + step-by-step access guide", li_secure:"Secure recovery email included", li_support:"Free support during access", li_vip:"VIP priority delivery",
+    no_results:"No accounts match your search.", new_update:"Starting checkout for"},
+  fr:{flag:"🇫🇷", brand:"RevoMaker Steam", nav_accounts:"Comptes", nav_why:"Pourquoi nous", nav_support:"Support", nav_buy:"Guide d'achat ✓",
+    hero_t1:"Accès instantané aux", hero_t2:"comptes gaming premium",
+    hero_p:"Accédez instantanément et en toute sécurité aux bibliothèques Steam, Xbox, Rockstar et VIP vérifiées.",
+    chip_verified:"100% comptes vérifiés", chip_fast:"Livraison instantanée", chip_vip:"Coffre VIP & Pass", chip_secure:"Paiement sécurisé",
+    tab_std:"Comptes Standards", tab_vip:"Comptes VIP", search_ph:"Rechercher des comptes…",
+    games:"jeux", price_label:"Prix unique", buy_now:"Acheter", details:"Détails", sold_out:"Épuisé",
+    why_title:"Pourquoi les gamers choisissent RevoMaker Steam",
+    f1t:"Livraison instantanée", f1d:"Identifiants et instructions livrés automatiquement après le paiement — sans attente.",
+    f2t:"Vérifiés & contrôlés", f2d:"Chaque compte est contrôlé manuellement, jeux vérifiés et accès sécurisé avant publication.",
+    f3t:"Support 24/7", f3d:"Une équipe dédiée disponible jour et nuit en français, anglais, italien et arabe.",
+    f4t:"Garantie de remplacement", f4d:"En cas de perte d'accès, remplacement ou remboursement garanti.",
+    foot_desc:"Accès premium à des comptes de jeux numériques avec sécurité, rapidité et clarté.",
+    foot_product:"Produit", foot_company:"Société", foot_legal:"Légal", foot_contact:"Contact",
+    foot_privacy:"Confidentialité", foot_terms:"CGU", foot_refund:"Remboursement",
+    foot_copy:"© 2026 RevoMaker Steam. Tous droits réservés.", foot_tag:"Des comptes partagés, vraiment.",
+    m_includes:"Ce qui est inclus :", li_manual:"Transfert complet + guide d'accès pas à pas", li_secure:"E-mail de récupération sécurisé inclus", li_support:"Support gratuit pendant l'accès", li_vip:"Livraison prioritaire VIP",
+    no_results:"Aucun compte ne correspond à votre recherche.", new_update:"Passage au paiement pour"},
+  it:{flag:"🇮🇹", brand:"RevoMaker Steam", nav_accounts:"Account", nav_why:"Perché noi", nav_support:"Assistenza", nav_buy:"Guida ✓",
+    hero_t1:"Accesso istantaneo ai", hero_t2:"account gaming premium",
+    hero_p:"Accedi in modo istantaneo e sicuro alle librerie verificate Steam, Xbox, Rockstar e VIP.",
+    chip_verified:"100% account verificati", chip_fast:"Consegna istantanea", chip_vip:"Vault VIP & pass", chip_secure:"Pagamento sicuro",
+    tab_std:"Account Standard", tab_vip:"Account VIP", search_ph:"Cerca account…",
+    games:"giochi", price_label:"Prezzo unico", buy_now:"Acquista", details:"Dettagli", sold_out:"Esaurito",
+    why_title:"Perché i gamer scelgono ReVoMaker Steam",
+    f1t:"Consegna istantanea", f1d:"Credenziali e istruzioni consegnate automaticamente dopo il pagamento, senza attese.",
+    f2t:"Verificati & controllati", f2d:"Ogni account viene controllato manualmente prima della pubblicazione.",
+    f3t:"Assistenza 24/7", f3d:"Un team dedicato disponibile giorno e notte in italiano, inglese, francese e arabo.",
+    f4t:"Garanzia sostituzione", f4d:"In caso di problemi di accesso, sostituzione o rimborso garantiti.",
+    foot_desc:"Accesso premium ad account gaming digitali con sicurezza, velocità e chiarezza.",
+    foot_product:"Prodotto", foot_company:"Azienda", foot_legal:"Legale", foot_contact:"Contattaci",
+    foot_privacy:"Privacy", foot_terms:"Termini", foot_refund:"Rimborso",
+    foot_copy:"© 2026 ReVoMaker Steam. Tutti i diritti riservati.", foot_tag:"Account condivisi, raffinati.",
+    m_includes:"Cosa è incluso:", li_manual:"Consegna completa + guida passo a passo", li_secure:"Email di recupero sicura inclusa", li_support:"Supporto gratuito durante l'accesso", li_vip:"Consegna prioritaria VIP",
+    no_results:"Nessun account corrisponde alla ricerca.", new_update:"Passaggio al pagamento per"},
+  ar:{flag:"🇸🇦", brand:"ReVoMaker Steam", nav_accounts:"الحسابات", nav_why:"لماذا نحن", nav_support:"الدعم", nav_buy:"دليل الشراء ✓",
+    hero_t1:"وصول فوري إلى", hero_t2:"حسابات الألعاب المتميزة",
+    hero_p:"احصل على وصول فوري وآمن إلى مكتبات ستيم وإكس بوكس وروكستار و VIP موثقــة — تُسلَّم خلال ثوانٍ.",
+    chip_verified:"حسابات موثقة 100%", chip_fast:"تسليم فوري", chip_vip:"خزنة VIP وباقات", chip_secure:"دفع آمن",
+    tab_std:"الحسابات القياسية", tab_vip:"حسابات VIP", search_ph:"ابحث عن حسابات…",
+    games:"لعبة", price_label:"سعر واحد", buy_now:"اشترِ الآن", details:"التفاصيل", sold_out:"نفدت الكمية",
+    why_title:"لماذا يختار اللاعبون ReVoMaker Steam",
+    f1t:"تسليم فوري", f1d:"يتم تسليم بيانات الدخول والتعليمات تلقائيًا بعد الدفع مباشرة — بدون انتظار.",
+    f2t:"موثق ومدقق", f2d:"كل حساب يتم فحصه يدويًا والتأكد من الألعاب وتأمين الوصول قبل النشر.",
+    f3t:"دعم 24/7", f3d:"فريق متخصص متاح على مدار الساعة بالإنجليزية والفرنسية والإيطالية والعربية.",
+    f4t:"ضمان الاستبدال", f4d:"إذا حدثت مشكلة في الوصول، فالاستبدال أو استرداد المبلغ مضمون.",
+    foot_desc:"وصول متميز إلى حسابات ألعاب رقمية بأمان وسرعة ووضوح.",
+    foot_product:"المنتج", foot_company:"الشركة", foot_legal:"قانوني", foot_contact:"اتصل بنا",
+    foot_privacy:"الخصوصية", foot_terms:"الشروط", foot_refund:"سياسة الاسترداد",
+    foot_copy:"© 2026 ReVoMaker Steam. جميع الحقوق محفوظة.", foot_tag:"حسابات مشتركة، بشكل أفضل.",
+    m_includes:"ما هو مشمول:", li_manual:"تسليم كامل + دليل وصول خطوة بخطوة", li_secure:"بريد استعادة آمن مرفق", li_support:"دعم مجاني أثناء الوصول", li_vip:"تسليم VIP ذو الأولوية",
+    no_results:"لا توجد حسابات مطابقة لبحثك.", new_update:"بدء الدفع لـ"},
+};
+
+const LANG_NAMES = {en:"English", fr:"Français", it:"Italiano", ar:"العربية"};
+const COVER_GRADS = {
+  "l-g1":"linear-gradient(135deg,#1e3a8a,#3b82f6)",
+  "l-g2":"linear-gradient(135deg,#7c2d12,#f59e0b)",
+  "l-g3":"linear-gradient(135deg,#450a0a,#f97316)",
+  "l-g4":"linear-gradient(135deg,#064e3b,#10b981)",
+  "l-g5":"linear-gradient(135deg,#1e1b4b,#8b5cf6)",
+  "l-g6":"linear-gradient(135deg,#450a0a,#ef4444 80%)",
+  "l-g7":"linear-gradient(135deg,#0c4a6e,#22d3ee)",
+  "l-g8":"linear-gradient(135deg,#450a0a,#dc2626)",
+  "l-g9":"linear-gradient(135deg,#713f12,#fbbf24)",
+  "l-g10":"linear-gradient(135deg,#312e81,#818cf8)",
+  "l-g11":"linear-gradient(135deg,#134e4a,#2dd4bf)",
+  "l-g12":"linear-gradient(135deg,#4c1d95,#c084fc)",
+};
+
+const $ = s => document.querySelector(s);
+let state = {lang:"en", tab:"standard", platform:"all", q:""};
+
+/* ================= I18N ================= */
+function t(key){ return I18N[state.lang][key] ?? key; }
+
+function applyLang(){
+  const L = I18N[state.lang];
+  document.documentElement.lang = state.lang;
+  document.documentElement.dir = state.lang === "ar" ? "rtl" : "ltr";
+  $("#lang-flag").textContent = L.flag;
+  $("#lang-label").textContent = LANG_NAMES[state.lang];
+  document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t(el.dataset.i18n));
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => el.placeholder = t(el.dataset.i18nPh));
+  document.querySelectorAll(".lang-menu button").forEach(b => b.classList.toggle("current", b.dataset.lang === state.lang));
+  localStorage.setItem("rm_lang", state.lang);
+  renderFilters();
+  renderGrid();
+}
+
+/* ================= RENDERING ================= */
+function renderFilters(){
+  const wrap = $("#filters");
+  wrap.innerHTML = "";
+  for(const [key, p] of Object.entries(PLATFORMS)){
+    const b = document.createElement("button");
+    b.className = "filter" + (state.platform === key ? " active" : "");
+    b.textContent = `${p.emoji} ${p.label[state.lang] || p.label.en}`;
+    b.addEventListener("click", () => { state.platform = key; renderFilters(); renderGrid(); });
+    wrap.appendChild(b);
+  }
+}
+
+function filtered(){
+  const q = state.q.trim().toLowerCase();
+  return ACCOUNTS.filter(a =>
+    a.tab === state.tab &&
+    (state.platform === "all" || a.platform === state.platform) &&
+    (!q || a.title[state.lang].toLowerCase().includes(q) || a.platform.includes(q))
+  );
+}
+
+function renderGrid(){
+  const grid = $("#grid");
+  grid.innerHTML = "";
+  const items = filtered();
+  if(!items.length){
+    grid.innerHTML = `<div class="empty"><div class="big">🔍</div><p>${t("no_results")}</p></div>`;
+    return;
+  }
+  items.forEach((a, i) => {
+    const isVip = a.tab === "vip";
+    const card = document.createElement("article");
+    card.className = "card";
+    card.style.animationDelay = `${i * 0.05}s`;
+    card.innerHTML = `
+      <div class="cover" style="background:${COVER_GRADS[a.art]}">
+        <div class="art"></div>
+        <span class="glyph">${a.glyph}</span>
+        <span class="platform-tag">${PLATFORMS[a.platform].emoji} ${PLATFORMS[a.platform].label[state.lang] || PLATFORMS[a.platform].label.en}</span>
+        <span class="type-tag ${isVip ? "vip":"std"}">${isVip ? "VIP" : t("tab_std").split(" ")[0]}</span>
+      </div>
+      <div class="card-body">
+        <span class="card-platform">${PLATFORMS[a.platform].label[state.lang] || PLATFORMS[a.platform].label.en}</span>
+        <h3 class="card-title">${a.title[state.lang]}</h3>
+        <p class="card-meta">${a.games} ${t("games")}</p>
+        <div class="card-foot">
+          ${a.sold
+            ? `<span class="soldout">${t("sold_out")} 😴</span>`
+            : `<div class="price"><small>${t("price_label")}</small>$${a.price}.00</div>
+               <button class="info-btn" title="${t("details")}">ⓘ</button>
+               <button class="buy-btn">🛒 <span>${t("buy_now")}</span></button>`}
+        </div>
+      </div>`;
+    if(!a.sold){
+      card.querySelector(".info-btn").addEventListener("click", () => openModal(a));
+      card.querySelector(".buy-btn").addEventListener("click", () => buy(a));
+    }
+    grid.appendChild(card);
+  });
+}
+
+function openModal(a){
+  const L = I18N[state.lang];
+  $("#modal-cover").style.background = COVER_GRADS[a.art];
+  $("#modal-glyph").textContent = a.glyph;
+  $("#modal-title").textContent = a.title[state.lang];
+  $("#modal-meta").textContent = `${PLATFORMS[a.platform].label[state.lang] || PLATFORMS[a.platform].label.en} • ${a.games} ${t("games")}`;
+  const list = $("#modal-list");
+  list.innerHTML = `<div style="font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3)">${L.m_includes}</div>` +
+    [L.li_manual, L.li_secure, L.li_support, a.tab==="vip" ? L.li_vip : null]
+      .filter(Boolean).map(x => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>${x}</li>`).join("");
+  $("#modal-price").textContent = `$${a.price}.00`;
+  $("#modal-buy").onclick = () => { closeModal(); buy(a); };
+  $("#modal-overlay").classList.add("open");
+}
+function closeModal(){ $("#modal-overlay").classList.remove("open"); }
+
+function buy(a){
+  const toast = $("#toast");
+  toast.innerHTML = `✅ <b>${t("new_update")}:</b> ${a.title[state.lang]} — $${a.price}.00`;
+  toast.classList.add("show");
+  clearTimeout(buy._t);
+  buy._t = setTimeout(() => toast.classList.remove("show"), 3200);
+}
+
+/* ================= EVENTS ================= */
+document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => {
+  state.tab = b.dataset.tab;
+  document.querySelectorAll(".tab").forEach(x => x.classList.toggle("active", x === b));
+  renderGrid();
+}));
+
+$("#search").addEventListener("input", e => { state.q = e.target.value; renderGrid(); });
+
+$("#lang-btn").addEventListener("click", e => { e.stopPropagation(); $("#lang-menu").classList.toggle("open"); });
+document.querySelectorAll(".lang-menu button").forEach(b => b.addEventListener("click", () => {
+  state.lang = b.dataset.lang;
+  $("#lang-menu").classList.remove("open");
+  applyLang();
+}));
+document.addEventListener("click", () => $("#lang-menu").classList.remove("open"));
+
+$("#modal-close").addEventListener("click", closeModal);
+$("#modal-overlay").addEventListener("click", e => { if(e.target.id === "modal-overlay") closeModal(); });
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
+
+/* smooth scroll for anchors */
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+  const target = document.querySelector(a.getAttribute("href"));
+  if(target){ e.preventDefault(); target.scrollIntoView({behavior:"smooth"}); }
+}));
+
+/* init */
+try{ state.lang = localStorage.getItem("rm_lang") || "en"; }catch(_){}
+applyLang();
+</script>
+</body>
+</html>

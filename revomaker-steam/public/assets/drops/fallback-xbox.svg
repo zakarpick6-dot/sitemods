@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="XBOX DROP key art">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#04120A"/>
+      <stop offset="0.55" stop-color="#08080E"/>
+      <stop offset="1" stop-color="#050509"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#22C55E" stop-opacity="0.6"/>
+      <stop offset="0.55" stop-color="#22C55E" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#A3E635" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#A3E635" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="core" cx="42%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#22C55E" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#A3E635" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#06060B" stop-opacity="0.2"/>
+    </radialGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22C55E" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#A3E635" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="0.62" stop-color="#000" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.86"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22C55E" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#22C55E" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#A3E635" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#FFFFFF" opacity="0.028"/>
+    </pattern>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.055"/></feComponentTransfer>
+    </filter>
+    <clipPath id="frame"><rect width="1200" height="750"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="750" fill="url(#bg)"/>
+    <ellipse cx="792" cy="225" rx="456" ry="375" fill="url(#glowA)" filter="url(#blur)"/>
+    <ellipse cx="192" cy="615" rx="360" ry="300" fill="url(#glowB)" filter="url(#blur)"/>
+
+    <line x1="-1200" y1="790" x2="456" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="-1050" y1="790" x2="468" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="-900" y1="790" x2="480" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="-750" y1="790" x2="492" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="-600" y1="790" x2="504" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="-450" y1="790" x2="516" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="-300" y1="790" x2="528" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="-150" y1="790" x2="540" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="0" y1="790" x2="552" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="150" y1="790" x2="564" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="300" y1="790" x2="576" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="450" y1="790" x2="588" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="600" y1="790" x2="600" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="750" y1="790" x2="612" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="900" y1="790" x2="624" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="1050" y1="790" x2="636" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="1200" y1="790" x2="648" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="1350" y1="790" x2="660" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="1500" y1="790" x2="672" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="1650" y1="790" x2="684" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="1800" y1="790" x2="696" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="1950" y1="790" x2="708" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="2100" y1="790" x2="720" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="2250" y1="790" x2="732" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="2400" y1="790" x2="744" y2="470" stroke="#22C55E" stroke-opacity="0.16" stroke-width="1"/><line x1="0" y1="480" x2="1200" y2="480" stroke="#22C55E" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="495" x2="1200" y2="495" stroke="#22C55E" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="516" x2="1200" y2="516" stroke="#22C55E" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="546" x2="1200" y2="546" stroke="#22C55E" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="590" x2="1200" y2="590" stroke="#22C55E" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="654" x2="1200" y2="654" stroke="#22C55E" stroke-opacity="0.12" stroke-width="1"/><line x1="0" y1="747" x2="1200" y2="747" stroke="#22C55E" stroke-opacity="0.12" stroke-width="1"/>
+    
+    <polygon points="760,0 1010,0 690,750 520,750" fill="url(#streak)" opacity="0.55"/>
+    <polygon points="1040,0 1120,0 900,750 840,750" fill="url(#streak)" opacity="0.35"/>
+    <path d="M0 618 L1200 388" stroke="#22C55E" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M0 668 L1200 438" stroke="#22C55E" stroke-opacity="0.08" stroke-width="1"/>
+
+    <g opacity="0.9">
+    <g transform="translate(760 350)">
+      <circle r="196" fill="none" stroke="#22C55E" stroke-opacity="0.45" stroke-width="2"/>
+      <circle r="152" fill="none" stroke="#A3E635" stroke-opacity="0.5" stroke-width="1.5"/>
+      <circle r="104" fill="url(#core)" stroke="#22C55E" stroke-opacity="0.7" stroke-width="1.5"/>
+      <path d="M-96 -56 A 112 112 0 0 1 96 56" fill="none" stroke="#A3E635" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-70 30 L0 -56 L70 30" fill="none" stroke="#22C55E" stroke-opacity="0.85" stroke-width="3" stroke-linejoin="round"/>
+      <circle r="236" fill="none" stroke="#22C55E" stroke-opacity="0.14" stroke-dasharray="2 12"/>
+      <circle cx="196" cy="0" r="4" fill="#22C55E"/>
+      <circle cx="-196" cy="0" r="4" fill="#A3E635"/>
+    </g></g>
+    <circle cx="692" cy="141" r="1.27" fill="#22C55E" opacity="0.53"/><circle cx="544" cy="266" r="1.85" fill="#22C55E" opacity="0.23"/><circle cx="726" cy="274" r="1.83" fill="#22C55E" opacity="0.35"/><circle cx="861" cy="364" r="0.72" fill="#22C55E" opacity="0.28"/><circle cx="858" cy="192" r="1.44" fill="#22C55E" opacity="0.25"/><circle cx="1183" cy="339" r="1.91" fill="#22C55E" opacity="0.41"/><circle cx="811" cy="206" r="2.33" fill="#22C55E" opacity="0.16"/><circle cx="162" cy="226" r="2.15" fill="#22C55E" opacity="0.18"/><circle cx="629" cy="401" r="1.07" fill="#22C55E" opacity="0.36"/><circle cx="1187" cy="452" r="1.26" fill="#22C55E" opacity="0.19"/><circle cx="1050" cy="419" r="1.96" fill="#22C55E" opacity="0.59"/><circle cx="1131" cy="271" r="0.89" fill="#22C55E" opacity="0.39"/><circle cx="801" cy="160" r="0.95" fill="#22C55E" opacity="0.50"/><circle cx="989" cy="344" r="1.55" fill="#22C55E" opacity="0.37"/><circle cx="973" cy="269" r="1.68" fill="#22C55E" opacity="0.58"/><circle cx="786" cy="171" r="1.48" fill="#22C55E" opacity="0.24"/><circle cx="110" cy="551" r="2.20" fill="#22C55E" opacity="0.34"/><circle cx="1126" cy="392" r="1.20" fill="#22C55E" opacity="0.61"/><circle cx="57" cy="178" r="0.96" fill="#22C55E" opacity="0.57"/><circle cx="686" cy="143" r="1.82" fill="#22C55E" opacity="0.24"/><circle cx="764" cy="234" r="0.65" fill="#22C55E" opacity="0.24"/><circle cx="649" cy="273" r="2.10" fill="#22C55E" opacity="0.28"/><circle cx="871" cy="341" r="1.41" fill="#22C55E" opacity="0.26"/><circle cx="915" cy="507" r="1.69" fill="#22C55E" opacity="0.43"/><circle cx="304" cy="299" r="2.19" fill="#22C55E" opacity="0.36"/><circle cx="537" cy="176" r="2.18" fill="#22C55E" opacity="0.28"/>
+
+    <rect y="412.50000000000006" width="1200" height="337.5" fill="url(#fade)"/>
+
+    <g opacity="1">
+      <rect x="38" y="38" width="1124" height="674" rx="18" fill="none" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <circle cx="58" cy="66" r="4" fill="#22C55E"/>
+      <text x="74" y="71" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3.2" fill="#FFFFFF" fill-opacity="0.58">REVOMAKER // XBOX DROP</text>
+      <text x="1144" y="696" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="2.6" fill="#FFFFFF" fill-opacity="0.34">XDR-00</text>
+      <text x="1218" y="658" text-anchor="end" font-family="'Space Grotesk','Segoe UI',sans-serif" font-size="300" font-weight="700" letter-spacing="-8" fill="none" stroke="#22C55E" stroke-opacity="0.14" stroke-width="1.2">XD</text>
+      <rect x="56" y="688" width="120" height="2" fill="url(#sweep)"/>
+    </g>
+
+    <rect width="1200" height="750" fill="url(#scan)"/>
+    <rect width="1200" height="750" filter="url(#grain)" opacity="0.6"/>
+  </g>
+</svg>

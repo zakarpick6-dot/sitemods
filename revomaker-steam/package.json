@@ -1,0 +1,19 @@
+{
+  "name": "revomaker-steam",
+  "version": "1.0.0",
+  "private": true,
+  "description": "REVOMAKER STEAM — premium gaming drop platform with a private owner console.",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server/index.js",
+    "setup": "node --disable-warning=ExperimentalWarning scripts/setup.js",
+    "owners": "node --disable-warning=ExperimentalWarning scripts/owners.js",
+    "demo:traffic": "node --disable-warning=ExperimentalWarning scripts/demo-traffic.js",
+    "reset:stats": "node --disable-warning=ExperimentalWarning scripts/reset-stats.js",
+    "test": "node --disable-warning=ExperimentalWarning scripts/test.js"
+  }
+}

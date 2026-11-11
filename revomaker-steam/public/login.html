@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Owner sign in — REVOMAKER STEAM</title>
+  <meta name="description" content="Private owner access for the REVOMAKER STEAM drop console." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0B0710" />
+  <link rel="icon" type="image/png" href="/assets/brand/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/theme.css" />
+</head>
+<body>
+  <main class="auth-wrap">
+    <section class="auth-showcase" aria-labelledby="showcaseTitle">
+      <img class="auth-showcase-bg" src="/assets/brand/og-cover.png" alt="" width="1200" height="630" />
+      <div class="auth-showcase-head">
+        <a class="brand" href="/" aria-label="REVOMAKER STEAM">
+          <span class="brand-mark"><img src="/assets/brand/logo-192.png" alt="" width="42" height="42" /></span>
+          <span class="brand-word"><strong>REVOMAKER</strong> <em>STEAM</em></span>
+        </a>
+        <span class="badge badge-live"><span class="live-dot" aria-hidden="true"></span> Private console</span>
+      </div>
+
+      <div class="auth-showcase-body">
+        <span class="eyebrow blue">Owner access only</span>
+        <h1 id="showcaseTitle">Run the vault.<br />Keep it sharp.</h1>
+        <p>
+          Publish drops, curate every lane and watch the real numbers move. Exactly three owner accounts exist —
+          there is no public registration and no way in from the storefront.
+        </p>
+        <div class="auth-points">
+          <div class="auth-point">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-layers"></use></svg>
+            <div><strong>Full control</strong><span>Create, edit, publish and retire drops from one console.</span></div>
+          </div>
+          <div class="auth-point">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chart"></use></svg>
+            <div><strong>Real analytics</strong><span>Views, claims, visitors and CTR straight from SQLite.</span></div>
+          </div>
+          <div class="auth-point">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield"></use></svg>
+            <div><strong>Hardened sessions</strong><span>Scrypt hashing, CSRF tokens and HTTP-only cookies.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-showcase-foot">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Encrypted at rest · No public sign-up</span>
+      </div>
+    </section>
+
+    <section class="auth-main">
+      <a class="auth-top-link" href="/">
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-left"></use></svg>
+        Back to the storefront
+      </a>
+
+      <div class="auth-card">
+        <a class="brand" href="/" aria-label="REVOMAKER STEAM">
+          <span class="brand-mark"><img src="/assets/brand/logo-192.png" alt="" width="42" height="42" /></span>
+          <span class="brand-word"><strong>REVOMAKER</strong> <em>STEAM</em></span>
+        </a>
+
+        <h2 class="auth-heading">Owner sign in</h2>
+        <p class="auth-sub">Use the credentials provisioned for one of the three owner accounts.</p>
+
+        <div class="alert alert-warn" id="setupWarning" hidden>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-alert"></use></svg>
+          <span>No owner accounts are configured yet. Run <strong>npm run setup</strong> on the server to create the three owners, then reload this page.</span>
+        </div>
+
+        <form class="auth-form" id="loginForm" novalidate>
+          <div class="field" id="emailField">
+            <label class="field-label" for="email">Email address</label>
+            <input class="input" id="email" name="email" type="email" autocomplete="username" placeholder="owner@revomaker.gg" required aria-describedby="emailError" />
+            <span class="field-error" id="emailError">Enter a valid email address.</span>
+          </div>
+
+          <div class="field" id="passwordField">
+            <label class="field-label" for="password">
+              Password
+              <span class="field-hint">12+ characters</span>
+            </label>
+            <div class="input-affix">
+              <input class="input" id="password" name="password" type="password" autocomplete="current-password" placeholder="Your owner password" required minlength="12" aria-describedby="passwordError" />
+              <button type="button" id="togglePassword" aria-label="Show password">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-eye"></use></svg>
+              </button>
+            </div>
+            <span class="field-error" id="passwordError">Password must be at least 12 characters.</span>
+          </div>
+
+          <div class="alert alert-error" id="loginError" role="alert" hidden>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-x-circle"></use></svg>
+            <span id="loginErrorText">Invalid email or password.</span>
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-block" type="submit" id="loginSubmit">
+            Sign in to the console
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-right"></use></svg>
+          </button>
+        </form>
+
+        <div class="auth-note">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-lock"></use></svg>
+          <span>This console is for the three provisioned owners only. Sessions expire after seven days and can be revoked from inside the dashboard.</span>
+        </div>
+
+        <div class="auth-foot">
+          <span>REVOMAKER STEAM · v1.0</span>
+          <a href="/">Storefront</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/util.js" defer></script>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/login.js" defer></script>
+</body>
+</html>

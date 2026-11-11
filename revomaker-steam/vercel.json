@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/category/:slug", "destination": "/category.html" },
+    { "source": "/drop/:slug", "destination": "/drop.html" }
+  ]
+}

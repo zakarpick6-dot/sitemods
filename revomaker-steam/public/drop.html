@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--HEAD-->
+  <meta name="theme-color" content="#0B0710" />
+  <link rel="icon" type="image/png" href="/assets/brand/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/theme.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="REVOMAKER STEAM">
+        <span class="brand-mark"><img src="/assets/brand/logo-192.png" alt="" width="42" height="42" /></span>
+        <span class="brand-word"><strong>REVOMAKER</strong> <em>STEAM</em></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/#latest">Drops</a>
+        <a class="nav-link" href="/category/steam">Steam</a>
+        <a class="nav-link" href="/category/xbox">Xbox</a>
+        <a class="nav-link" href="/category/cookies">Cookies</a>
+        <a class="nav-link" href="/category/other">Other</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-trigger" type="button" data-search-open aria-label="Search drops">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+          <span>Search drops</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <a class="btn btn-outline nav-owner" href="/admin/login">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-lock"></use></svg>
+          Owner access
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <nav class="mobile-nav-links" aria-label="Mobile navigation">
+        <a href="/">Home <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg></a>
+        <a href="/#latest">Latest drops <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg></a>
+        <a href="/category/steam">Steam <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg></a>
+        <a href="/category/xbox">Xbox <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg></a>
+        <a href="/category/cookies">Cookies <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg></a>
+        <a href="/category/other">Other <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg></a>
+      </nav>
+      <div class="mobile-nav-actions">
+        <button class="btn btn-soft btn-block" type="button" data-search-open>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+          Search drops
+        </button>
+        <a class="btn btn-outline btn-block" href="/admin/login">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-lock"></use></svg>
+          Owner access
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="drop-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" id="dropBreadcrumb">
+        <a href="/">Home</a>
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+        <a href="/#latest">Drops</a>
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+        <span aria-current="page">Loading…</span>
+      </nav>
+
+      <div class="drop-layout" id="dropLayout" aria-busy="true">
+        <article class="drop-main" id="dropMain">
+          <div class="drop-main-media sk" style="border-radius:0"></div>
+          <div class="drop-content">
+            <div class="sk" style="height:14px;width:120px;margin-bottom:1rem"></div>
+            <div class="sk" style="height:44px;width:80%;margin-bottom:0.8rem"></div>
+            <div class="sk" style="height:44px;width:55%;margin-bottom:1.5rem"></div>
+            <div class="sk" style="height:16px;width:100%;margin-bottom:0.6rem"></div>
+            <div class="sk" style="height:16px;width:92%;margin-bottom:0.6rem"></div>
+            <div class="sk" style="height:16px;width:70%;margin-bottom:2rem"></div>
+            <div class="sk" style="height:88px;width:100%"></div>
+          </div>
+        </article>
+
+        <aside class="drop-sidebar" aria-label="Drop details">
+          <div class="side-card">
+            <div class="side-card-head">Drop statistics</div>
+            <div class="side-card-body">
+              <div class="drop-stat-grid">
+                <div class="drop-stat-cell"><small>Views</small><strong>—</strong></div>
+                <div class="drop-stat-cell"><small>Clicks</small><strong>—</strong></div>
+                <div class="drop-stat-cell"><small>CTR</small><strong>—</strong></div>
+                <div class="drop-stat-cell"><small>Category</small><strong>—</strong></div>
+              </div>
+            </div>
+          </div>
+          <div class="side-card">
+            <div class="side-card-head">More like this</div>
+            <div class="side-card-body"><div class="sk" style="height:150px"></div></div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="section" aria-labelledby="relatedTitle" id="relatedSection" hidden>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Keep going</span>
+            <h2 class="section-title" id="relatedTitle" style="font-size:1.8rem">Related drops</h2>
+          </div>
+          <a class="btn btn-outline btn-sm" id="relatedCatLink" href="/#latest">
+            View category
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-right"></use></svg>
+          </a>
+        </div>
+        <div class="drop-grid" id="relatedGrid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="REVOMAKER STEAM">
+            <span class="brand-mark"><img src="/assets/brand/logo-192.png" alt="" width="42" height="42" /></span>
+            <span class="brand-word"><strong>REVOMAKER</strong> <em>STEAM</em></span>
+          </a>
+          <p>An independent, owner-curated gaming drop index. Real destinations, real analytics, zero credential trading.</p>
+          <div class="footer-status"><span class="live-dot" aria-hidden="true"></span><span id="systemStatus">All systems operational</span></div>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#latest">Latest drops</a></li>
+            <li><a href="/#popular">Trending</a></li>
+            <li><a href="/#how">How it works</a></li>
+            <li><a href="/#safety">Safety model</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="/category/steam"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-steam"></use></svg> Steam</a></li>
+            <li><a href="/category/xbox"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-xbox"></use></svg> Xbox</a></li>
+            <li><a href="/category/cookies"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-cookie"></use></svg> Cookies</a></li>
+            <li><a href="/category/other"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-grid"></use></svg> Other</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-owner">
+          <h3>Owners</h3>
+          <ul>
+            <li><a href="/admin/login"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-lock"></use></svg> Owner console</a></li>
+            <li><a href="/sitemap.xml"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-globe"></use></svg> Sitemap</a></li>
+            <li><a href="/api/health"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-activity"></use></svg> System health</a></li>
+          </ul>
+          <div class="footer-note" style="margin-top:1rem"><strong>Private by design.</strong> Exactly three owner accounts. No public registration, ever.</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> REVOMAKER STEAM · Built for gamers</span>
+        <span class="inline"><span>No credentials stored</span><span class="dot-sep"></span><span>v1.0</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="/js/util.js" defer></script>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/site.js" defer></script>
+  <script src="/js/drop.js" defer></script>
+</body>
+</html>
